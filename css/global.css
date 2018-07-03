@@ -77,6 +77,16 @@ a:hover{
     font-weight:normal;
     font-style:normal
 }
+/*如果为IE8 提示用户更新浏览器块*/
+.ifIE8Box{
+    height: 40px;
+    line-height: 40px;
+    border-bottom: 1px solid #808080;
+    text-align: center;
+}
+.ifIE8Box a{
+    color: #2D72FF;
+}
 /*header公共样式*/
 .headerBox{
     background-color: #fff;

@@ -1,8 +1,10 @@
 $(document).ready(function () {
+    var pageHeight = $('.section1').height();
     $("#fullPage").fullpage({
         slidesColor: ['#fff', '#fff', '#fff', '#fff', '#fff', '#fff', '#fff', '#fff'],
         anchors: ['page1', 'page2', 'page3', 'page4', 'page5', 'page6', 'page7', 'page8'],
         scrollingSpeed: 500,
+        pageHeight:pageHeight,
         //页面滚动完成cb
         afterLoad: function (anchorLink, index) {
             if (index != 1) {
@@ -85,7 +87,7 @@ $(document).ready(function () {
 
     // 点击返回顶部按钮
     $(".toTopBtn").on("click",function(){
-        $.fn.fullpage.silentMoveTo(1);
+        $.fn.fullpage.moveTo(1);
     });
 
     //点击搜索按钮弹出搜索框
