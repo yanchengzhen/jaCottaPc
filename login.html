@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <title>嘉坤登录页</title>
+  <link rel="stylesheet" href="css/global.css">
+  <link rel="stylesheet" href="css/login.css">
+  <script src="js/jquery-1.8.3.min.js"></script>
+  <script src="js/global.js"></script>
+  <!--[if lte IE 8]>
+  <div class="ifIE8Box">
+    你正在使用一个 <strong>过时</strong> 的浏览器。请 <a href="https://www.google.cn/chrome/" target=_blank>升级您的浏览器</a>，以提高您的体验。
+  </div>
+  <![endif]-->
+</head>
+<body>
+<!--公共头部样式-->
+<div class="headerBox">
+  <div class="headerBoxContent float_clear">
+    <div class="headerItem headerLogo float-l">
+      <img src="image/globallogo.png" alt="">
+    </div>
+    <div class="headerItem headerTap on float-l">
+      <span>HOME</span>
+    </div>
+    <div class="headerItem headerTap float-l">
+      <span>PRODUCT CATEGORIES</span>
+      <div class="headerCategoriesBox float_clear">
+        <div class="headerCategoriesItem border-r border-b float-l">
+          <img class="headerCategoriesItemPic" src="image/header-p1.png" alt="">
+          <img class="headerCategoriesItemFocus" src="image/headerFocus1.png" alt="">
+        </div>
+        <div class="headerCategoriesItem border-r border-b float-l">
+          <img class="headerCategoriesItemPic" src="image/header-p2.png" alt="">
+          <img class="headerCategoriesItemFocus" src="image/headerFocus1.png" alt="">
+        </div>
+        <div class="headerCategoriesItem border-r border-b float-l">
+          <img class="headerCategoriesItemPic" src="image/header-p3.png" alt="">
+          <img class="headerCategoriesItemFocus" src="image/headerFocus2.png" alt="">
+        </div>
+        <div class="headerCategoriesItem border-b float-l">
+          <img class="headerCategoriesItemPic" src="image/header-p4.png" alt="">
+          <img class="headerCategoriesItemFocus" src="image/headerFocus1.png" alt="">
+        </div>
+        <div class="headerCategoriesItem border-r float-l">
+          <img class="headerCategoriesItemPic" src="image/header-p5.png" alt="">
+          <img class="headerCategoriesItemFocus" src="image/headerFocus1.png" alt="">
+        </div>
+        <div class="headerCategoriesItem border-r float-l">
+          <img class="headerCategoriesItemPic" src="image/header-p6.png" alt="">
+          <img class="headerCategoriesItemFocus" src="image/headerFocus1.png" alt="">
+        </div>
+        <div class="headerCategoriesItem border-r float-l">
+          <img class="headerCategoriesItemPic" src="image/header-p7.png" alt="">
+          <img class="headerCategoriesItemFocus" src="image/headerFocus1.png" alt="">
+        </div>
+        <div class="headerCategoriesItem float-l">
+          <img class="headerCategoriesItemPic" src="image/header-p8.png" alt="">
+          <img class="headerCategoriesItemFocus" src="image/headerFocus1.png" alt="">
+        </div>
+      </div>
+    </div>
+    <div class="headerItem headerTap float-l">
+      <span>COMPANY PROFILE</span>
+    </div>
+    <div class="headerItem headerTap float-l">
+      <span>CONTACTS</span>
+    </div>
+    <div class="headerItem float-r">
+      <span>CH/EN</span>
+    </div>
+    <div class="headerItem headerLogin float-r">
+      <img id="headerLogin" src="image/login1.png" alt="">
+    </div>
+    <div class="headerItem headerSearch float-r">
+      <img id="headerSearch" src="image/search1.png" alt="">
+    </div>
+    <!--下方移动底部边框-->
+    <div class="headerTapBorder"></div>
+    <!--搜索框-->
+    <div class="headerSearchBox float_clear" id="headerSearchBox">
+      <input type="text" class="headerSearchInput" placeholder="What are you looking for...">
+      <div class="headerSearchBtn">
+        <span>Search</span>
+      </div>
+      <img class="headerSearchTriangle" src="image/headerSearchTriangle1.png" alt="">
+    </div>
+    <!--登录登出弹出按钮-->
+    <div class="headerLoginBox" id="headerLoginBox">
+      <div class="headerLoginTriangle"></div>
+      <div class="headerLoginLine border-b">
+        <a href="javascript:void(0)">Sign In</a>
+      </div>
+      <div class="headerLoginLine">
+        <a href="javascript:void(0)">Sign Up</a>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="main_box">
+  <div class="mask"></div>
+  <div class="main">
+    <!--面包屑导航-->
+    <div class="crumbs_nav">
+      <a href="#">HOME</a>-<span>MY ACCOUNT</span>
+    </div>
+    <div class="login_box">
+      <div class="login_title">
+        <h1>MY ACCOUNT <span>LOGIN</span></h1>
+      </div>
+      <div class="login_name">
+        <label for="email">Email Address</label>
+        <input type="email" id="email">
+      </div>
+      <div class="login_pwd">
+        <label for="pwd">Password</label>
+        <input type="password" id="pwd">
+      </div>
+      <div class="login_checkbox">
+        <a href="#">forgot password?</a>
+        <label for="checkbox">
+          <input type="checkbox" id="checkbox">Remember Me
+        </label>
+      </div>
+      <div class="login_btn">
+        <button type="button">LOGIN</button>
+      </div>
+    </div>
+  </div>
+</div>
+<!--公共底部-->
+<div class="footerBox">
+  <div class="footerTop">
+    <div class="footerTopTitle"><span>CONTACT</span> US</div>
+    <div class="footerTopTitle2">
+      <div>WRITE US AND WE WILL REPLY TO YOU</div>
+      <div>GUARANTEED FOR 2 DAYS</div>
+    </div>
+    <div class="footerChangeBox float_clear">
+      <div class="footerChangeLeft float-l">
+        <div class="footerChangeLeftTitle">
+          CONTENTS
+          <div class="footerChangeLeftBorder"></div>
+        </div>
+        <div class="footerChangeLeftLine">
+          <a href="javascript:void(0)">Home</a>
+        </div>
+        <div class="footerChangeLeftLine">
+          <a href="javascript:void(0)">Categories</a>
+        </div>
+        <div class="footerChangeLeftLine">
+          <a href="javascript:void(0)">Company Profile</a>
+        </div>
+        <div class="footerChangeLeftLine">
+          <a href="javascript:void(0)">Contacts</a>
+        </div>
+      </div>
+      <div class="footerChangeLeft float-l">
+        <div class="footerChangeLeftTitle">
+          PRODUCTS
+          <div class="footerChangeLeftBorder"></div>
+        </div>
+        <div class="footerChangeLeftLine">
+          <a href="javascript:void(0)">Wedding Dinnerware set</a>
+        </div>
+        <div class="footerChangeLeftLine">
+          <a href="javascript:void(0)">Hotel Dinnerware get</a>
+        </div>
+        <div class="footerChangeLeftLine">
+          <a href="javascript:void(0)">Ceramic Mug</a>
+        </div>
+        <div class="footerChangeLeftLine">
+          <a href="javascript:void(0)">Cup and saucer</a>
+        </div>
+        <div class="footerChangeLeftLine">
+          <a href="javascript:void(0)">Enamel Mug</a>
+        </div>
+        <div class="footerChangeLeftLine">
+          <a href="javascript:void(0)">See all categories</a>
+        </div>
+      </div>
+      <div class="footerChangeRight float-r float_clear">
+        <input type="text" class="footerInput float-l" placeholder="Name">
+        <input type="text" class="footerInput float-r" placeholder="Email">
+        <textarea class="footerTextarea" cols="30" rows="10" placeholder="YourMessage"></textarea>
+        <button class="footerSend float-l">SEND</button>
+      </div>
+    </div>
+  </div>
+  <div class="footerBottom">
+    <div class="footerIcon-button twitter">
+      <i class="fa fa-twitter"></i>
+      <span></span>
+    </div>
+    <div class="footerIcon-button facebook">
+      <i class="fa fa-facebook"></i>
+      <span></span>
+    </div>
+    <div class="footerIcon-button google-plus">
+      <i class="fa fa-google-plus"></i>
+      <span></span>
+    </div>
+    <div class="footerIcon-button linkedin">
+      <i class="fa fa-linkedin"></i>
+      <span></span>
+    </div>
+    <div class="footerBottomText">COPYRIGHT &copy; 2006-2016 ZCOOL</div>
+  </div>
+</div>
+</body>
+</html>

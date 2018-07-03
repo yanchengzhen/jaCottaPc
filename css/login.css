@@ -1,0 +1,130 @@
+button,input{
+  outline: none;
+  padding: 0;
+  margin: 0;
+}
+.main_box{
+  width: 100%;
+  height: 620px;
+  background: url("../image/login/bg_img.png") no-repeat;
+  position: relative;
+}
+.mask{
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color:rgba(0,0,0,.5);
+}
+.main{
+  margin-top: 125px;
+  padding-top: 35px;
+}
+.crumbs_nav{
+  margin-bottom: 15px;
+  color: #fff;
+  font-size: 16px;
+  margin-left: 12px;
+}
+.crumbs_nav a{
+  color: #929292;
+  font-family: Regular;
+  margin-right: 12px;
+}
+.crumbs_nav span{
+  font-family:Bold;
+  font-weight: bold;
+  margin-left: 12px;
+}
+.login_box{
+  width: 751px;
+  height: 478px;
+  background-color: #FFF;
+  margin: 0 auto;
+  padding:0 60px;
+}
+.login_title{
+  padding-top: 52px;
+}
+.login_title h1{
+  font-family: San Francisco Display;
+  font-weight: normal;
+  font-family: Thin;
+  font-size: 53px;
+  margin: 0;
+  text-align: center;
+  margin-bottom: 45px;
+}
+.login_title h1 span{
+  font-family: Heavy;
+}
+.main label{
+  font-family: Regular;
+  font-size: 16px;
+  display: block;
+  margin-bottom: 8px;
+  color: #070a0e;
+  cursor: pointer;
+  -moz-user-select:none; /*火狐*/
+  -webkit-user-select:none; /*webkit浏览器*/
+  -ms-user-select:none; /*IE10*/
+  user-select:none;
+
+}
+.main input{
+  width: 100%;
+  height: 40px;
+  font-size: 16px;
+  padding-left: 20px;
+}
+.login_box>div{
+  margin-bottom: 25px;
+}
+.login_box .login_pwd{
+  margin-bottom: 5px;
+}
+.login_checkbox input{
+  width: auto;
+  height: 10px;
+  margin-right: 10px;
+  background-color:#ccc;
+  border: 0;
+  padding: 0;
+}
+.login_checkbox a{
+  font-family: Regular;
+  font-size: 16px;
+  display: block;
+  float: right;
+  color: #070a0e;
+}
+.login_checkbox a:hover{
+  color: #2D72FF;
+}
+.login_btn{
+  text-align: center;
+}
+.login_btn button{
+  width: 123px;
+  height: 41px;
+  line-height: 41px;
+  text-align: center;
+  font-family: Roboto;
+  font-weight: bold;
+  font-size: 16px;
+  border-radius: 6px;
+  background-color: #1b1b1b;
+  color: #fff;
+  border: 1px solid #1b1b1b;
+  cursor: pointer;
+  transition: all .5s;
+  -moz-animation: all .5s;
+  -webkit-transition: all .5s;
+  -o-animation: all .5s;
+}
+.login_btn button:hover{
+  font-size: 20px;
+  color:#070a0e;
+  background-color: #fff;
+}
