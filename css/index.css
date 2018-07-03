@@ -1,8 +1,8 @@
 .section {
     text-align: center;
-    font-family:"Microsoft Yahei";
     color: #333;
     height: 100vh !important;
+    overflow: hidden;
 }
 /*第一屏*/
 .section1{
@@ -236,7 +236,7 @@
 .section3TitleDes{
     text-align: left;
     font-size: 14px;
-    font-family: Roboto;
+    font-family: RobotoLight;
 }
 .section3TitleBorderBox{
     margin-top: 20px;
@@ -595,7 +595,7 @@
     height: 100%;
 }
 .section7Content{
-    width: 1200px;
+    width: 900px;
     height: 100%;
     margin: 0 auto;
     position: relative;
@@ -626,9 +626,94 @@
     width: 100%;
     height: 100%;
     position: relative;
+    background: rgba(55,55,55,.95);
+}
+.section7ItemBox>img{
+    position: absolute;
+    top: 25px;
+    left: 25px;
+    width: 175px;
+    height: 175px;
+    border-radius: 50%;
+}
+.section7ItemMark{
+    position: absolute;
+    width: 100%;
+    height: 110px;
+    bottom: 0;
+    background: rgba(0,0,0,0.7);
+    z-index: 1;
+    color: #fff;
+    padding-left: 15px;
+    padding-top: 30px;
+    text-align: left;
+}
+.section7ItemMarkTitle{
+    font-size: 14px;
+    margin-bottom: 5px;
+}
+.section7ItemMarkTitle>span{
+    font-family: Brooklyn;
+    font-size: 24px;
+}
+.section7ItemMarkTitle2>a{
+    font-size: 14px;
+    font-family: RobotoBold;
+    color: #fff;
+}
+.section7Item1{
+    top: -40%;
+    left: -40%;
+}
+.section7Item1In{
+    top: 250px;
+    left: 0;
+}
+.section7Item2{
+    top: -40%;
+    left: 180px;
+}
+.section7Item2In{
+    top: 210px;
+    left: 226px;
+}
+.section7Item3{
+    top: -40%;
+    left: 453px;
+}
+.section7Item3In{
+    top: 130px;
+    left: 453px;
+}
+.section7Item4{
+    top: -40%;
+    right: -70%;
+}
+.section7Item4In{
+    top: 250px;
+    right: -6px;
+}
+.section7Item5{
+    top: 357px;
+    right: -70%;
+}
+.section7Item5In{
+    top: 357px;
+    right: 221px;
 }
 
-
+/*第八屏*/
+.section8Box{
+    padding-top: 126px;
+    height: 100%;
+    width: 100%;
+    background-color: #313131;
+    position: relative;
+}
+.section8Box  .footerBox{
+    position: absolute;
+    bottom: 0;
+}
 /*字体进入效果*/
 .in100{
     transition: all 1s cubic-bezier(0.215, 0.61, 0.355, 1) 0.1s;

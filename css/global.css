@@ -1,6 +1,6 @@
 *{
     box-sizing: border-box;
-    font-family:Roboto;
+    font-family:Brooklyn;
 }
 .main{
     width: 1200px;
@@ -51,10 +51,10 @@ a:hover{
 }
  /*全局字体文件*/
 @font-face {
-    font-family:'Candara';
-    src: url('../font/Candara.ttf') format('truetype');
+    font-family:'Brooklyn';
+    src: url('../font/The Brooklyn Smooth Bold Demo.ttf') format('truetype');
     font-weight:normal;
-    font-style:normal
+    font-style:normal;
 }
 /*banner细字体*/
 @font-face {
@@ -72,8 +72,20 @@ a:hover{
 }
 /*Roboto字体*/
 @font-face {
-    font-family:'Roboto';
+    font-family:'RobotoLight';
     src: url('../font/Roboto-Light_0.ttf') format('truetype');
+    font-weight:normal;
+    font-style:normal
+}
+@font-face {
+    font-family:'RobotoRegular';
+    src: url('../font/Roboto-Regular_1.ttf') format('truetype');
+    font-weight:normal;
+    font-style:normal
+}
+@font-face {
+    font-family:'RobotoBold';
+    src: url('../font/Roboto-Bold_1.ttf') format('truetype');
     font-weight:normal;
     font-style:normal
 }
@@ -97,6 +109,9 @@ a:hover{
     top: -126px;
     z-index: 100;
     transition: all 0.3s;
+}
+.headerBox span{
+    font-family: RobotoBold;
 }
 .headerBoxShow{
     top: 0;
@@ -231,6 +246,125 @@ a:hover{
 }
 .headerCategoriesItem:hover .headerCategoriesItemPic{
     transform: scale(1.1);
+}
+
+/*底部块*/
+.footerBox{
+    background-color: #313131;
+    width: 100%;
+    height: 612px;
+}
+.footerTop{
+    height: 507px;
+    width: 1050px;
+    margin: 0 auto;
+}
+.footerTopTitle{
+    color: #fff;
+}
+.footerBottom{
+    height: 105px;
+    background-color: #000000;
+}
+/*图形字体*/
+@font-face {
+    font-family: 'FontAwesome';
+    src: url('../font/font-awesome.woff2?v=4.5.0') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+.fa {
+    display: inline-block;
+    font: normal normal normal 14px/1 FontAwesome;
+    font-size: inherit;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+.fa-twitter:before {
+    content: "\f099";
+}
+.fa-facebook-f:before, .fa-facebook:before {
+    content: "\f09a";
+}
+.fa-google-plus:before {
+    content: "\f0d5";
+}
+.fa-linkedin:before {
+    content: "\f0e1";
+}
+.footerIcon-button{
+    background-color: #272727;
+    border-radius: 50%;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 16px;
+    width: 34px;
+    height: 34px;
+    line-height: 34px;
+    margin: 24px 6px 8px 6px;
+    position: relative;
+    text-align: center;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    text-decoration: none;
+}
+.footerIcon-button i{
+    background: none;
+    color: #000 !important;
+    height: 34px;
+    left: 0;
+    line-height: 34px;
+    position: absolute;
+    top: 0;
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    -o-transition: all 0.3s;
+    transition: all 0.3s;
+    width: 34px;
+    z-index: 10;
+}
+.footerIcon-button span{
+    border-radius: 0;
+    display: block;
+    height: 0;
+    left: 50%;
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    -o-transition: all 0.3s;
+    transition: all 0.3s;
+    width: 0;
+}
+.twitter span {
+    background-color: #55c5f5;
+}
+.facebook span {
+    background-color: #3B5998;
+}
+.google-plus span {
+    background-color: #db5a3c;
+}
+.linkedin span {
+    background-color: #1d82d4;
+}
+.footerIcon-button:hover span{
+    width:34px;
+    height: 34px;
+    border-radius: 50%;
+    margin: -17px;
+}
+.footerIcon-button:hover i{
+    color: #fff !important;
+}
+.footerBottomText{
+    color: #fff;
+    font-size: 13px;
+    font-family: Microsoft YaHei;
 }
 
 /*返回顶部样式*/

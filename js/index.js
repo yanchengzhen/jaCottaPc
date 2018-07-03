@@ -40,7 +40,11 @@ $(document).ready(function () {
 
             }
             if (index == 7) {
-
+                $('.section7Item1').addClass("section7Item1In");
+                $('.section7Item2').addClass("section7Item2In");
+                $('.section7Item3').addClass("section7Item3In");
+                $('.section7Item4').addClass("section7Item4In");
+                $('.section7Item5').addClass("section7Item5In");
             }
             if (index == 8) {
 
@@ -72,7 +76,11 @@ $(document).ready(function () {
 
             }
             if (index == '7') {
-
+                $('.section7Item1').removeClass("section7Item1In");
+                $('.section7Item2').removeClass("section7Item2In");
+                $('.section7Item3').removeClass("section7Item3In");
+                $('.section7Item4').removeClass("section7Item4In");
+                $('.section7Item5').removeClass("section7Item5In");
             }
             if (index == '8') {
 
