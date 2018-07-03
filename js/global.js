@@ -21,4 +21,25 @@ $(document).ready(function () {
         $(".headerTapBorder").css("width",width);
         $(".headerTapBorder").css("left",left);
     }
+
+    //点击搜索按钮弹出搜索框
+    $('#headerSearch').click(function () {
+        $("#headerSearchBox").toggleClass("headerSearchBoxShow");
+        $("body").bind("mousedown", onBodyDown);
+    });
+
+    //点击登录按钮弹出搜索框
+    $('#headerLogin').click(function () {
+        $("#headerLoginBox").toggleClass("headerLoginBoxShow");
+        $("body").bind("mousedown", onBodyDown);
+    });
+
+    //点击除搜索框之外 关闭搜索框
+    function onBodyDown(event) {
+        if (!(event.target.id == "headerSearch" || event.target.id == "headerLogin" || $(event.target).parents("#headerSearchBox").length > 0 || $(event.target).parents("#headerLoginBox").length > 0)) {
+            $("#headerSearchBox").removeClass("headerSearchBoxShow");
+            $("#headerLoginBox").removeClass("headerLoginBoxShow");
+            $("body").unbind("mousedown", onBodyDown);
+        }
+    }
 });

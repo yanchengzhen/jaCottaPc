@@ -2,6 +2,14 @@
     box-sizing: border-box;
     font-family:Brooklyn;
 }
+button,input,textarea{
+    outline: none;
+    margin: 0;
+    padding: 0;
+}
+body{
+    margin: 0;
+}
 .main{
     width: 1200px;
     margin: 0 auto;
@@ -101,21 +109,20 @@ a:hover{
 }
 /*header公共样式*/
 .headerBox{
-    background-color: #fff;
+    background-color: rgba(23,23,23,.9);
     border-bottom: 1px solid #888888;
     height: 126px;
     width: 100%;
     position: fixed;
-    top: -126px;
+    top: 0;
+    color: #fff;
     z-index: 100;
     transition: all 0.3s;
 }
 .headerBox span{
     font-family: RobotoBold;
 }
-.headerBoxShow{
-    top: 0;
-}
+
 .headerBoxContent{
     width: 1200px;
     margin: 0 auto;
@@ -145,7 +152,7 @@ a:hover{
     width: 30px;
     left: 0;
     bottom: 0;
-    background-color: #333;
+    background-color: #fff;
     transition: all 0.3s;
 }
 .headerLogin>img{
@@ -175,9 +182,12 @@ a:hover{
     float: left;
     width: 224px;
     height: 30px;
+    font-size: 16px;
     outline: none;
     padding-left: 10px;
-    border: 1px solid #cccccc;
+    border: 1px solid #fff;
+    background-color: transparent;
+    color: #fff;
 }
 .headerSearchBtn{
     float: left;
@@ -185,26 +195,60 @@ a:hover{
     height: 30px;
     line-height: 28px;
     text-align: center;
-    border: 1px solid #cccccc;
-    background-color: #fff;
+    border: 1px solid #fff;
+    background-color: transparent;
     border-left: 0;
     font-size: 14px;
-    color: #808080;
+    color: #fff;
     cursor: pointer;
     transition: all 0.4s;
 }
 .headerSearchBtn:hover{
-    background-color: #333;
-    color: #fff;
-    border-color: #333;
+    background-color: #fff;
+    color: #000;
+    border-color: #fff;
 }
 .headerSearchTriangle{
     position: absolute;
     width: 11px;
     height: 8px;
-    background-color: #ccc;
     top: -7px;
     left: 50%;
+}
+/*头部点击登录头像弹出框*/
+.headerLoginBox{
+    position: absolute;
+    top: 120px;
+    right: 0;
+    width: 123px;
+    opacity: 0;
+    visibility: hidden;
+    background-color: #fff;
+    border: 1px solid #cccccc;
+    padding: 0 15px;
+    transition: all 0.3s;
+}
+.headerLoginBoxShow{
+    top: 90px;
+    opacity: 1;
+    visibility: visible;
+}
+.headerLoginTriangle{
+    position: absolute;
+    top: -20px;
+    left: 25px;
+    border-top: 11px solid transparent;
+    border-right: 15px solid transparent;
+    border-bottom: 20px solid #fff;
+    border-left: 15px solid transparent;
+}
+.headerLoginLine{
+    height: 35px;
+    text-align: center;
+    padding-top: 11px;
+}
+.headerLoginLine>a{
+    font-size: 16px;
 }
 /*头部条产品分类弹出抽屉*/
 .headerCategoriesBox{
@@ -253,15 +297,98 @@ a:hover{
     background-color: #313131;
     width: 100%;
     height: 612px;
+    text-align: center;
 }
 .footerTop{
     height: 507px;
     width: 1050px;
     margin: 0 auto;
+    padding-top: 45px;
+    color: #929292;
 }
 .footerTopTitle{
     color: #fff;
+    font-size: 53px;
 }
+.footerTopTitle>span{
+    font-family: Heavy;
+}
+.footerTopTitle2{
+    font-size: 14px;
+    line-height: 18px;
+}
+.footerChangeBox{
+    margin-top: 30px;
+}
+.footerChangeLeft:first-child{
+    margin-right: 100px;
+}
+.footerChangeLeftTitle{
+    color: #fff;
+    font-size: 18px;
+    font-family: RobotoRegular;
+    text-align: left;
+}
+.footerChangeLeftBorder{
+    width: 24px;
+    height: 2px;
+    background-color: #fff;
+    margin-top: 4px;
+    margin-bottom: 10px;
+}
+.footerChangeLeftLine{
+    height: 28px;
+    line-height: 28px;
+    text-align: left;
+    font-size: 16px;
+}
+.footerChangeLeftLine a{
+    color: #929292;
+}
+.footerChangeLeftLine a:hover{
+    color: #fff;
+}
+.footerChangeRight{
+    width: 511px;
+}
+.footerInput{
+    border: 1px solid #fff;
+    color: #fff;
+    width: 247px;
+    height: 38px;
+    padding:0 12px;
+    background-color: transparent;
+    font-size: 16px;
+    font-family: RobotoRegular;
+}
+.footerTextarea{
+    border: 1px solid #fff;
+    color: #fff;
+    min-width: 100%;
+    max-width: 100%;
+    min-height: 143px;
+    max-height: 143px;
+    padding:6px 12px;
+    margin-top: 16px;
+    background-color: transparent;
+    font-size: 16px;
+    font-family: RobotoRegular;
+}
+.footerSend{
+    width: 123px;
+    height: 41px;
+    line-height: 41px;
+    background-color: #fff;
+    text-align: center;
+    color: #000;
+    font-size: 16px;
+    font-family: RobotoBold;
+    margin-top: 21px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+
 .footerBottom{
     height: 105px;
     background-color: #000000;

@@ -98,20 +98,6 @@ $(document).ready(function () {
         $.fn.fullpage.moveTo(1);
     });
 
-    //点击搜索按钮弹出搜索框
-    $('#headerSearch').click(function () {
-        $("#headerSearchBox").toggleClass("headerSearchBoxShow");
-        $("body").bind("mousedown", onBodyDown);
-    });
-
-    //点击除搜索框之外 关闭搜索框
-    function onBodyDown(event) {
-        if (!(event.target.id == "headerSearch" || $(event.target).parents("#headerSearchBox").length > 0)) {
-            $("#headerSearchBox").removeClass("headerSearchBoxShow");
-            $("body").unbind("mousedown", onBodyDown);
-        }
-    }
-
     // 轮播初始化
     new Swiper('.swiper-container', {
         loop: false,

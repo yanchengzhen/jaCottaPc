@@ -1,3 +1,37 @@
+/*首页头部样式*/
+.headerBox{
+    top: -126px;
+    background-color: #fff;
+    color: #333;
+}
+.headerBoxShow{
+    top: 0;
+}
+.headerTapBorder{
+    background-color: #333;
+}
+.headerSearchInput{
+    border: 1px solid #cccccc;
+    color: #000;
+}
+.headerSearchBtn{
+    border: 1px solid #cccccc;
+    background-color: #fff;
+    color: #808080;
+}
+.headerSearchBtn:hover {
+    background-color: #333;
+    color: #fff;
+    border-color: #333;
+}
+.headerLoginTriangle{
+    position: absolute;
+    top: -7px;
+    left: 34px;
+    border: none;
+}
+
+
 .section {
     text-align: center;
     color: #333;
