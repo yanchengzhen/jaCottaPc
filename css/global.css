@@ -1,0 +1,250 @@
+*{
+    box-sizing: border-box;
+    font-family:Roboto;
+}
+.main{
+    width: 1200px;
+    margin: 0 auto;
+    position: relative;
+    height: 100%;
+}
+.main:after{
+    content: "";
+    display: table;
+    clear: both;
+    overflow: hidden;
+}
+.float_clear:after{
+    content: "";
+    display: table;
+    clear: both;
+    overflow: hidden;
+}
+.float-l{
+    float: left;
+}
+.float-r{
+    float: right;
+}
+.border-all{
+    border: 1px solid #888;
+}
+.border-t{
+    border-top: 1px solid #888;
+}
+.border-r{
+    border-right: 1px solid #888;
+}
+.border-b{
+    border-bottom: 1px solid #888;
+}
+.border-l{
+    border-left: 1px solid #888;
+}
+a{
+    color: #333333;
+    text-decoration: none;
+    transition: all 0.3s;
+}
+a:hover{
+    color: #2D72FF;
+}
+ /*全局字体文件*/
+@font-face {
+    font-family:'Candara';
+    src: url('../font/Candara.ttf') format('truetype');
+    font-weight:normal;
+    font-style:normal
+}
+/*banner细字体*/
+@font-face {
+    font-family:'thin';
+    src: url('../font/sanfranciscodisplay-thin-webfont.ttf') format('truetype');
+    font-weight:normal;
+    font-style:normal
+}
+/*banner粗字体*/
+@font-face {
+    font-family:'Heavy';
+    src: url('../font/sanfranciscodisplay-Heavy-webfont.ttf') format('truetype');
+    font-weight:normal;
+    font-style:normal
+}
+/*Roboto字体*/
+@font-face {
+    font-family:'Roboto';
+    src: url('../font/Roboto-Light_0.ttf') format('truetype');
+    font-weight:normal;
+    font-style:normal
+}
+/*header公共样式*/
+.headerBox{
+    background-color: #fff;
+    border-bottom: 1px solid #888888;
+    height: 126px;
+    width: 100%;
+    position: fixed;
+    top: -126px;
+    z-index: 100;
+    transition: all 0.3s;
+}
+.headerBoxShow{
+    top: 0;
+}
+.headerBoxContent{
+    width: 1200px;
+    margin: 0 auto;
+    height: 125px;
+    position: relative;
+}
+.headerItem{
+    height: 126px;
+    line-height: 125px;
+    position: relative;
+    text-align: center;
+    font-size: 16px;
+    cursor: pointer;
+}
+.headerLogo>img{
+    width: 162px;
+    margin-bottom: -11px;
+    margin-right: 50px;
+}
+.headerTap{
+    font-weight: bold;
+    padding: 0 28px;
+}
+.headerTapBorder{
+    position: absolute;
+    height: 4px;
+    width: 30px;
+    left: 0;
+    bottom: 0;
+    background-color: #333;
+    transition: all 0.3s;
+}
+.headerLogin>img{
+    margin-right: 27px;
+    margin-bottom: -2px;
+}
+.headerSearch>img{
+    margin-right: 31px;
+    margin-bottom: -2px;
+}
+.headerSearchBox{
+    position: absolute;
+    bottom: -38px;
+    right: 0;
+    width: 285px;
+    height: 30px;
+    transition: all 0.3s;
+    opacity: 0;
+    visibility: hidden;
+}
+.headerSearchBoxShow{
+    bottom: 0;
+    opacity: 1;
+    visibility: visible;
+}
+.headerSearchInput{
+    float: left;
+    width: 224px;
+    height: 30px;
+    outline: none;
+    padding-left: 10px;
+    border: 1px solid #cccccc;
+}
+.headerSearchBtn{
+    float: left;
+    width: 59px;
+    height: 30px;
+    line-height: 28px;
+    text-align: center;
+    border: 1px solid #cccccc;
+    background-color: #fff;
+    border-left: 0;
+    font-size: 14px;
+    color: #808080;
+    cursor: pointer;
+    transition: all 0.4s;
+}
+.headerSearchBtn:hover{
+    background-color: #333;
+    color: #fff;
+    border-color: #333;
+}
+.headerSearchTriangle{
+    position: absolute;
+    width: 11px;
+    height: 8px;
+    background-color: #ccc;
+    top: -7px;
+    left: 50%;
+}
+/*头部条产品分类弹出抽屉*/
+.headerCategoriesBox{
+    position: absolute;
+    width: 800px;
+    height: 373px;
+    background-color: #fff;
+    top: 126px;
+    left: -120px;
+    visibility: hidden;
+    opacity: 0;
+    transition: all 0.3s;
+}
+.headerTap:hover .headerCategoriesBox{
+    visibility: visible;
+    opacity: 1;
+}
+.headerCategoriesItem{
+    width: 200px;
+    text-align: center;
+    height: 187px;
+    line-height: 187px;
+    position: relative;
+    overflow: hidden;
+}
+.headerCategoriesItemPic{
+    height: 160px;
+    width: 160px;
+    margin-top: 14px;
+    transition: all 0.3s;
+}
+.headerCategoriesItemFocus{
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+}
+.headerCategoriesItem:hover .headerCategoriesItemPic{
+    transform: scale(1.1);
+}
+
+/*返回顶部样式*/
+.toTopBox{
+    position: fixed;
+    bottom: 160px;
+    right: 100px;
+    width: 35px;
+    display: none;
+}
+.toTopBtn{
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    background: #a0a0a0;
+    text-align: center;
+    line-height: 31px;
+    border: 1px solid #fff;
+    cursor: pointer;
+}
+.toTopPoint{
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: #a0a0a0;
+    margin: 7px auto 0 auto;
+}
