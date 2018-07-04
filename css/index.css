@@ -2,6 +2,10 @@
 .headerBox{
     top: -126px;
     background-color: #fff;
+    border-bottom: 1px solid #888888;
+    color: #333;
+}
+.headerBox a{
     color: #333;
 }
 .headerBoxShow{
@@ -694,6 +698,9 @@
     font-size: 14px;
     font-family: RobotoBold;
     color: #fff;
+}
+.section7ItemMarkTitle2>a:hover{
+    color: #2D72FF;
 }
 .section7Item1{
     top: -40%;

@@ -6,6 +6,22 @@ button,input,textarea{
     outline: none;
     margin: 0;
     padding: 0;
+    transition: all 0.3s;
+}
+input,textarea{
+    border:1px solid #d2d2d2;
+}
+input:focus {
+    border-color: #66afe9;
+    outline: 0;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(102,175,233,.6);
+    box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(102,175,233,.6);
+}
+textarea:focus {
+    border-color: #66afe9;
+    outline: 0;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(102,175,233,.6);
+    box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(102,175,233,.6);
 }
 body{
     margin: 0;
@@ -22,6 +38,27 @@ body{
     clear: both;
     overflow: hidden;
 }
+/*面包屑导航*/
+.crumbs_nav{
+    margin-bottom: 15px;
+    color: #000;
+    font-size: 16px;
+    margin-left: 12px;
+}
+.crumbs_nav a{
+    color: #000;
+    font-family: Regular;
+    margin-right: 12px;
+}
+.crumbs_nav a:hover{
+    color: #2D72FF;
+}
+.crumbs_nav span{
+    font-family:Bold;
+    font-weight: bold;
+    margin-left: 12px;
+}
+
 .main-pd{
     padding-top: 126px;
 }
@@ -113,7 +150,6 @@ a:hover{
 /*header公共样式*/
 .headerBox{
     background-color: rgba(23,23,23,.9);
-    border-bottom: 1px solid #888888;
     height: 126px;
     width: 100%;
     position: fixed;
@@ -122,8 +158,12 @@ a:hover{
     z-index: 100;
     transition: all 0.3s;
 }
-.headerBox span{
+.headerBox a{
+    display: block;
+    color: #fff;
     font-family: RobotoBold;
+    width: 100%;
+    padding: 0 28px;
 }
 
 .headerBoxContent{
@@ -144,10 +184,6 @@ a:hover{
     width: 162px;
     margin-bottom: -11px;
     margin-right: 50px;
-}
-.headerTap{
-    font-weight: bold;
-    padding: 0 28px;
 }
 .headerTapBorder{
     position: absolute;
