@@ -1,15 +1,15 @@
 $(document).ready(function () {
-    var initWidth = $(".headerBoxContent .on").outerWidth(true);        //获取头部中class为on 的元素的宽度
-    var initLeft = $(".headerBoxContent .on").position().left;          //获取头部中class为on 的元素的left
-    //为头部移动border赋值 宽 left值
-    changeBorder(initWidth,initLeft);
+    setTimeout(()=>{
+        //为头部移动border赋值 宽 left值
+        changeBorder($(".headerBoxContent .on").outerWidth(true),$(".headerBoxContent .on").position().left);
+    },100);
     $(".headerTap").on("mouseenter",function(e){
         e.stopPropagation();
         changeBorder($(this).outerWidth(true),$(this).position().left);
     });
     $(".headerTap").on("mouseleave",function(e){
         e.stopPropagation();
-        changeBorder(initWidth,initLeft);
+        changeBorder($(".headerBoxContent .on").outerWidth(true),$(".headerBoxContent .on").position().left);
     });
 
     /**

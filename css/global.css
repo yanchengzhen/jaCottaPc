@@ -22,6 +22,9 @@ body{
     clear: both;
     overflow: hidden;
 }
+.main-pd{
+    padding-top: 126px;
+}
 .float_clear:after{
     content: "";
     display: table;
@@ -253,7 +256,7 @@ a:hover{
 /*头部条产品分类弹出抽屉*/
 .headerCategoriesBox{
     position: absolute;
-    width: 800px;
+    width: 802px;
     height: 373px;
     background-color: #fff;
     top: 126px;
@@ -261,6 +264,7 @@ a:hover{
     visibility: hidden;
     opacity: 0;
     transition: all 0.3s;
+    border: 1px solid #ccc;
 }
 .headerTap:hover .headerCategoriesBox{
     visibility: visible;
