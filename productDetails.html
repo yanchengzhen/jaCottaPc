@@ -7,7 +7,7 @@
   <link rel="stylesheet" href="css/global.css">
   <link href="css/cloudzoom.css" rel="stylesheet"/>
   <link rel="stylesheet" href="css/productDetails.css">
-  <script src="js/productDetails/jquery.min.js"></script>
+  <script src="js/jquery-1.8.3.min.js"></script>
   <script src="js/jquery-ui-1.10.3.min.js"></script>
   <script src="js/swiper.min.js"></script>
   <script src="js/productDetails/cloudzoom.js"></script>
@@ -103,48 +103,92 @@
   </div>
 </div>
 <!--主体部分-->
-<div class="main main-pd">
-  <div class="detail-col">
-    <!--面包屑导航-->
-    <div class="crumbs_nav">
-      <a href="index.html">HOME</a>-<a href="#">PRODUCT CATEGORIES</a>-<a href="#">NEW
-      PRODUCTS</a>-<span>MY ACCOUNT</span>
-    </div>
-    <!--图片放大镜效果-->
-    <div class="action-sub">
-      <div class="m">
-        <div class="jqueryzoom">
-          <!--中图展示-->
-          <img id="img" class="cloudzoom" src="images/2-m.jpg"
-               data-cloudzoom="zoomSizeMode:'image',zoomImage: 'images/2.jpg',autoInside: 30" alt="呵呵哒" title=""/>
-        </div>
+<div class="main main-pd ">
+  <!--面包屑导航-->
+  <div class="crumbs_nav">
+    <a href="index.html">HOME</a>-<a href="#">PRODUCT CATEGORIES</a>-<a href="#">NEW
+    PRODUCTS</a>-<span>MY ACCOUNT</span>
+  </div>
+  <div class="float_clear">
+    <div class="detail-col">
+      <!--图片放大镜效果-->
+      <div class="action-sub">
+        <div class="m">
+          <div class="jqueryzoom">
+            <!--中图展示-->
+            <img id="img" class="cloudzoom" src="image/product01.png"
+                 data-cloudzoom="zoomSizeMode:'image',zoomImage: 'image/product01.png',autoInside: 30" alt="呵呵哒" title=""/>
+          </div>
           <!--小图列表-->
-        <ul>
-          <li>
-            <img class="cloudzoom-gallery cloudzoom-gallery-active" src="images/2-s.jpg"
-                 data-cloudzoom="useZoom:'.cloudzoom',image:'images/2-m.jpg',zoomImage:'images/2.jpg'"/>
-          </li>
-          <li>
-            <img class="cloudzoom-gallery" src="images/3-s.jpg"
-                 data-cloudzoom="useZoom:'.cloudzoom',image:'images/3-m.jpg',zoomImage:'images/3.jpg'"/>
-          </li>
-          <li>
-            <img class="cloudzoom-gallery" src="images/4-s.jpg"
-                 data-cloudzoom="useZoom:'.cloudzoom',image:'images/4-m.jpg',zoomImage:'images/4.jpg'"/>
-          </li>
-          <li>
-            <img class="cloudzoom-gallery" src="images/5-s.jpg"
-                 data-cloudzoom="useZoom:'.cloudzoom',image:'images/5-m.jpg',zoomImage:'images/5.jpg'"/>
-          </li>
-        </ul>
+          <div class="out_container">
+            <div class="in_container">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                  <img class="cloudzoom-gallery cloudzoom-gallery-active" src="image/product01.png"
+                       data-cloudzoom="useZoom:'.cloudzoom',image:'image/product01.png',zoomImage:'image/product01.png'"/>
+                </div>
+                <div class="swiper-slide">
+                  <img class="cloudzoom-gallery" src="image/product02.png"
+                       data-cloudzoom="useZoom:'.cloudzoom',image:'image/product02.png',zoomImage:'image/product02.png'"/>
+                </div>
+                <div class="swiper-slide">
+                  <img class="cloudzoom-gallery" src="image/product03.png"
+                       data-cloudzoom="useZoom:'.cloudzoom',image:'image/product03.png',zoomImage:'image/product03.png'"/>
+                </div>
+                <div class="swiper-slide">
+                  <img class="cloudzoom-gallery" src="image/product04.png"
+                       data-cloudzoom="useZoom:'.cloudzoom',image:'image/product04.png',zoomImage:'image/product04.png'"/>
+                </div>
+                <div class="swiper-slide">
+                  <img class="cloudzoom-gallery" src="image/product05.png"
+                       data-cloudzoom="useZoom:'.cloudzoom',image:'image/product05.png',zoomImage:'image/product05.png'"/>
+                </div>
+                <div class="swiper-slide">
+                  <img class="cloudzoom-gallery" src="image/product06.png"
+                       data-cloudzoom="useZoom:'.cloudzoom',image:'image/product06.png',zoomImage:'image/product06.png'"/>
+                </div>
+              </div>
+              <div class="swiper-button-prev"></div>
+              <div class="swiper-button-next"></div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+    <!--产品名称及价格和规格-->
+    <div class="action-main">
+      <div class="action_name">
+        <h2>butterfly</h2>
+        <h2>dinnerware sets</h2>
+      </div>
+      <div class="action_referral">
+        <p>New design 4pcs bone</p>
+        <p>china plate sets butterfly wedding dinnerware sets</p>
+        <p>100000 Set/Sets per Month New design 4pcs bone china plate</p>
+        <p>sets butterfly wedding dinnerwa</p>
+      </div>
+      <div class="action_price">
+        US $32.98-34.98 / Set
+      </div>
+      <div class="action_size">
+        <span class="size_title">SIZE:</span>
+        <span class="spec">12inch</span>
+        <span class="spec">10.5inch</span>
+        <span class="spec">8inch</span>
+        <span class="spec">6.5inch</span>
+      </div>
+      <div class="action_btn">
+        <a href="#">
+          contact supplier
+        </a>
       </div>
     </div>
   </div>
-  <!--产品价格-->
-  <div class="action-main">
-
+  <!--产品详情介绍-->
+  <div class="detail_referral">
+    <img src="image/productDetails/HTB16jGORVXXXXXkaXXX760XFXXXP.png" alt="">
   </div>
-</div>
 </div>
 <!--公共底部样式-->
 <div class="footerBox">
@@ -237,6 +281,21 @@
 <!--放大镜效果启用-->
 <script type="text/javascript">
   CloudZoom.quickStart();
+</script>
+<!--swiper插件-->
+<script>
+  var swiper = new Swiper('.in_container', {
+    slidesPerView: 3,
+    spaceBetween: 10,
+    pagination: {
+      el: '.swiper-pagination',
+      clickable: true,
+    },
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
+    },
+  });
 </script>
 </body>
 </html>

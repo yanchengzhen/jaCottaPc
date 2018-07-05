@@ -1,21 +1,37 @@
+p{
+  margin: 0;
+  margin-top: 8px;
+}
+.detail-col{
+  float: left;
+  margin-top: 30px;
+  height: 665px;
+}
+.action-main{
+  float: right;
+  width: 626px;
+  height: 665px;
+  margin-top: 30px;
+  padding-left: 66px;
+  background-color: #e6eefa;
+}
+/*图片放大镜效果*/
 .m {
   width: 514px;
-  margin-top: 30px
 }
 /*外层盒子和里边图片的一点点样式*/
 .jqueryzoom {
   position: relative;
   padding: 0;
   border: solid 1px #ccc;
-  width: 512px;
-  height: 512px;
+  width: 514px;
+  height: 514px;
   overflow: hidden;
   display: inline-block;
 }
-
 /*放大镜是基于图片大小自动生成的，每次都要把jqueryzoom中img的大小和jqueryzoom盒子大小设置为一样的，不然放大镜滑块有可能溢出*/
 .jqueryzoom img {
-  width: 300px;
+  width: 514px;
 }
 
 ul li {
@@ -24,10 +40,112 @@ ul li {
 }
 
 ul li img {
-  width: 100px;
-  height: 100px;
+  width: 138px;
+  height: 138px;
 }
-
 .cloudzoom-gallery-active {
   opacity: .5
+}
+.out_container{
+  width: 514px;
+  height: 140px;
+  position: relative;
+  margin-top: 8px;
+  -webkit-touch-callout: none; /* iOS Safari */
+  -webkit-user-select: none; /* Chrome/Safari/Opera */
+  -khtml-user-select: none; /* Konqueror */
+  -moz-user-select: none; /* Firefox */
+  -ms-user-select: none; /* Internet Explorer/Edge */
+  user-select: none; /* Non-prefixed version, currently not supported by any browser */
+}
+.in_container{
+  width: 443px;
+  height: 140px;
+  margin: 0 auto;
+  overflow: hidden;
+}
+.swiper-slide img{
+  width: 138px;
+  border: 1px solid #ccc;
+}
+.swiper-button-prev, .swiper-container-rtl .swiper-button-next{
+  left: 0;
+  background: url("../image/productDetails/icon_ltArrows.png") no-repeat;
+  background-position:center left;
+}
+.swiper-button-next, .swiper-container-rtl .swiper-button-prev{
+  right: 0;
+  background: url("../image/productDetails/icon_rtArrows.png") no-repeat;
+  background-position:center right;
+}
+.swiper-button-next.swiper-button-disabled, .swiper-button-prev.swiper-button-disabled{
+  opacity: 0.5;
+}
+/*产品名称及价格和规格*/
+.action-main{
+  padding-top: 50px;
+}
+.action-main h2{
+  margin: 0;
+  text-transform:uppercase;
+  font-family: Roboto;
+  font-size: 43px;
+  color: #000;
+  font-weight: normal;
+}
+.action_referral{
+  margin-top: 10px;
+}
+.action_referral p{
+  font-family: Roboto;
+  font-size: 18px;
+}
+.action_price{
+  margin-top: 22px;
+  font-family: Avenir Next;
+  font-weight: bold;
+  font-size: 22px;
+  color: #f3a01f;
+}
+.action_size{
+  margin-top: 54px;
+}
+.size_title{
+  font-family: Roboto;
+  font-size: 24px;
+  font-weight: bold;
+  color: #333;
+}
+.spec{
+  font-family: Roboto;
+  font-size: 20px;
+  margin-left: 18px;
+  color: #333;
+}
+.action_btn{
+  margin-top: 110px;
+  text-transform:uppercase;
+}
+.action_btn a{
+  display: block;
+  font-family: Roboto;
+  font-size: 22px;
+  font-weight: bold;
+  width: 240px;
+  height: 40px;
+  line-height: 40px;
+  text-align: center;
+  border: 2px solid #f3a01f;
+  color:#f3a01f ;
+}
+.action_btn a:hover{
+  background-color: #f3a01f;
+  color:#fff;
+}
+.detail_referral{
+  margin-top: 88px;
+  margin-bottom: 142px;
+}
+.detail_referral img{
+  width: 100%;
 }

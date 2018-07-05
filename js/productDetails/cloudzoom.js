@@ -829,7 +829,7 @@
                     title: e(this).attr("title"),
                     Aa: e(this)
                 });
-                e(this).bind(g.galleryEvent,
+                e(this).bind(g.mouseTriggerEvent,
 				function () {
 				    var a;
 				    for (a = 0; a < c.k.length; a++) c.k[a].Aa.removeClass("cloudzoom-gallery-active");
