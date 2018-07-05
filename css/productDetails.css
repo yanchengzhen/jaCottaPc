@@ -1,0 +1,33 @@
+.m {
+  width: 514px;
+  margin-top: 30px
+}
+/*外层盒子和里边图片的一点点样式*/
+.jqueryzoom {
+  position: relative;
+  padding: 0;
+  border: solid 1px #ccc;
+  width: 512px;
+  height: 512px;
+  overflow: hidden;
+  display: inline-block;
+}
+
+/*放大镜是基于图片大小自动生成的，每次都要把jqueryzoom中img的大小和jqueryzoom盒子大小设置为一样的，不然放大镜滑块有可能溢出*/
+.jqueryzoom img {
+  width: 300px;
+}
+
+ul li {
+  float: left;
+  margin-right: 5px;
+}
+
+ul li img {
+  width: 100px;
+  height: 100px;
+}
+
+.cloudzoom-gallery-active {
+  opacity: .5
+}
