@@ -6,24 +6,25 @@ $(document).ready(function () {
             productList:[],
             categoryIndex:0,
             childCategoryOld:null,
-            productItemList:[1,2,3,4,5,6,7,8],
+            productItemList:[],
         },
         methods: {
             /**
              * 通过点击分类 获取产品
              * @param index  分类下标
              */
-            changeCategory:function(index){
+            changeCategory:function(index,child){
                 vm.productList[vm.categoryIndex].active = false;
                 vm.categoryIndex = index;
                 vm.productList[index].active = true;
-            },
-            changeChildCategory:function(child){
+                //子元素选中状态
                 if(vm.childCategoryOld){
                     vm.childCategoryOld.active = false;
                 }
-                vm.childCategoryOld = child;
-                child.active = true;
+                if(child){
+                    vm.childCategoryOld = child;
+                    child.active = true;
+                }
             },
             productCollect:function(item){
                 console.log(item);
@@ -32,7 +33,7 @@ $(document).ready(function () {
     });
 
     /**
-     * 获取产品类别与产品数据
+     * 获取产品类别
      */
     ajax('js/service/categoryData.json')
         .then((response)=>{
@@ -44,10 +45,27 @@ $(document).ready(function () {
                             type.category.name = type.category.name.toUpperCase();
                         })
                     }
-                })
+                });
+                vm.productList = response;
+                getProductList(vm.productList[0].id);
             }
-            vm.productList = response;
         });
+
+    /**
+     * 通过分类id获取产品数据
+     * @param categoryId
+     */
+    function getProductList(categoryId){
+        ajax('js/service/productData.json')
+            .then((response)=>{
+                if(response && response.length>0){
+                    response.forEach((date)=>{
+
+                    })
+                }
+                console.log(response)
+            });
+    }
 
     // 轮播初始化
     new Swiper('.swiper-container', {

@@ -92,10 +92,10 @@
         <div class="headerLoginBox" id="headerLoginBox">
             <div class="headerLoginTriangle"></div>
             <div class="headerLoginLine border-b">
-                <a href="javascript:void(0)">Sign In</a>
+                <a href="login.html">Sign In</a>
             </div>
             <div class="headerLoginLine">
-                <a href="javascript:void(0)">Sign Up</a>
+                <a href="register.html">Sign Up</a>
             </div>
         </div>
     </div>
@@ -178,9 +178,9 @@
                     <img v-if="item.categoryChildren" class="float-r categoryLineImg" src="image/rightArrow.png" alt="">
                     <div v-if="item.categoryChildren" class="categoryChildBox">
                         <div class="categoryChildLine float_clear"
-                             v-for="(child,index) in item.categoryChildren"
+                             v-for="child in item.categoryChildren"
                              :class="{categoryChildLineActive:child.active}"
-                             @click="changeChildCategory(child)"
+                             @click.stop="changeCategory(index,child)"
                         >
                             <span class="float-l categoryChildLineText">{{child.category.name}}</span>
                         </div>
