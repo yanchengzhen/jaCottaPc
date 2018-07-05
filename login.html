@@ -92,21 +92,21 @@
         <a href="javascript:void(0)">Sign In</a>
       </div>
       <div class="headerLoginLine">
-        <a href="javascript:void(0)">Sign Up</a>
+        <a href="register.html">Sign Up</a>
       </div>
     </div>
   </div>
 </div>
-<div class="main_box">
+<div class="main_box main-pd">
   <div class="mask"></div>
   <div class="main">
     <!--面包屑导航-->
     <div class="crumbs_nav">
       <a href="#">HOME</a>-<span>MY ACCOUNT</span>
     </div>
-    <div class="login_box">
+    <div class="login_box" id="login">
       <div class="login_title">
-        <h1>MY ACCOUNT <span>LOGIN</span></h1>
+        <h2>MY ACCOUNT <span>LOGIN</span></h2>
       </div>
       <div class="login_name">
         <label for="email">Email Address</label>
@@ -117,7 +117,7 @@
         <input type="password" id="pwd">
       </div>
       <div class="login_checkbox">
-        <a href="#">forgot password?</a>
+        <a href="#" id="forget_pws">forgot password?</a>
         <label for="checkbox">
           <input type="checkbox" id="checkbox">Remember Me
         </label>
@@ -125,6 +125,22 @@
       <div class="login_btn">
         <button type="button">LOGIN</button>
       </div>
+    </div>
+    <div class="forgetPws_box" id="forgetPws">
+      <div class="login_title">
+        <h2>MY ACCOUNT <span>LOGIN</span></h2>
+      </div>
+      <div class="forgetPws_title">
+        <i id="close"></i>
+        <h2>request to reset <span>your password </span></h2>
+      </div>
+        <div class="forgetPws_email">
+          <label for="forgetPws_email">Provide your account email to receive an email to reset your password.</label>
+          <input type="text" id="forgetPws_email">
+        </div>
+        <div class="forgetPws_btn">
+          <button type="button">SEND</button>
+        </div>
     </div>
   </div>
 </div>
@@ -207,5 +223,6 @@
     <div class="footerBottomText">COPYRIGHT &copy; 2006-2016 ZCOOL</div>
   </div>
 </div>
+<script src="js/login.js"></script>
 </body>
 </html>

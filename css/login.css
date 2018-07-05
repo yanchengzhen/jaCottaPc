@@ -13,7 +13,6 @@
   background-color:rgba(0,0,0,.5);
 }
 .main{
-  margin-top: 125px;
   padding-top: 35px;
 }
 .crumbs_nav{
@@ -22,18 +21,21 @@
 .crumbs_nav a{
   color: #929292;
 }
-
+/*登录*/
 .login_box{
+  position: absolute;
   width: 751px;
   height: 478px;
   background-color: #FFF;
   margin: 0 auto;
   padding:0 60px;
+  left: 50%;
+  margin-left: -375px;
 }
 .login_title{
   padding-top: 52px;
 }
-.login_title h1{
+.login_title h2{
   font-family: San Francisco Display;
   font-weight: normal;
   font-family: Thin;
@@ -42,7 +44,7 @@
   text-align: center;
   margin-bottom: 45px;
 }
-.login_title h1 span{
+.login_title h2 span{
   font-family: Heavy;
 }
 .main label{
@@ -63,6 +65,7 @@
   height: 40px;
   font-size: 16px;
   padding-left: 20px;
+  font-family: Regular;
 }
 .login_box>div{
   margin-bottom: 25px;
@@ -91,7 +94,7 @@
 .login_btn{
   text-align: center;
 }
-.login_btn button{
+.main button{
   width: 123px;
   height: 41px;
   line-height: 41px;
@@ -109,8 +112,51 @@
   -webkit-transition: all .5s;
   -o-animation: all .5s;
 }
-.login_btn button:hover{
+.main button:hover{
   font-size: 20px;
   color:#070a0e;
   background-color: #fff;
+}
+
+/*忘记密码*/
+.forgetPws_box{
+  position: absolute;
+  width: 852px;
+  height: 400px;
+  background-color: #FFF;
+  margin: 0 auto;
+  padding:0 38px;
+  margin-top: 39px;
+  display: none;
+  left: 50%;
+  margin-left: -426px;
+}
+.forgetPws_box .login_title h2{
+  margin-bottom: 32px;
+}
+.forgetPws_title h2{
+  font-family: Thin;
+  font-weight: normal;
+  font-size: 44px;
+  margin: 0;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+}
+.forgetPws_title i{
+  float: right;
+  width: 20px;
+  height: 20px;
+  margin-top: 20px;
+  cursor: pointer;
+  background: url("../image/login/close.png") no-repeat;
+}
+.forgetPws_title h2 span{
+  font-family: Heavy;
+  font-weight: bold;
+}
+.forgetPws_email{
+  margin-bottom: 25px;
+}
+.forgetPws_btn{
+  text-align: right;
 }

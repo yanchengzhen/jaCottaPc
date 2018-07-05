@@ -1,0 +1,11 @@
+$(function(){
+  $("#forget_pws").click(function(e){
+    e.preventDefault();
+    $("#login").fadeOut(1000);
+    $("#forgetPws").fadeIn(1000);
+  });
+  $("#close").click(function(){
+    $("#forgetPws").fadeOut(1000);
+    $("#login").fadeIn(1000);
+  });
+});
