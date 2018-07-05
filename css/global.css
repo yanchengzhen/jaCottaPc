@@ -41,12 +41,12 @@ body{
 .crumbs_nav{
     color: #000;
     font-size: 16px;
-    padding: 15px 12px;
+    padding: 15px 0;
 }
 .crumbs_nav a{
     color: #000;
     font-family: Regular;
-    margin-right: 12px;
+    margin: 0 12px;
 }
 .crumbs_nav a:hover{
     color: #2D72FF;
@@ -94,6 +94,7 @@ a{
 }
 a:hover{
     color: #2D72FF;
+    text-decoration: none;
 }
  /*全局字体文件*/
 @font-face {

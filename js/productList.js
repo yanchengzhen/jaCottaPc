@@ -7,13 +7,18 @@ $(document).ready(function () {
             categoryIndex:0,
             childCategoryOld:null,
             productItemList:[],
+            loading:false,
+            pageNo: 1,      //分页初始化到第几页
+            pages:8         //分页公共多少页
         },
         methods: {
             /**
              * 通过点击分类 获取产品
-             * @param index  分类下标
+             * @param type 点击第一级 1 第二级 2
+             * @param index 第一级下标
+             * @param child 第二级对象
              */
-            changeCategory:function(index,child){
+            changeCategory:function(type,index,child){
                 vm.productList[vm.categoryIndex].active = false;
                 vm.categoryIndex = index;
                 vm.productList[index].active = true;
@@ -25,9 +30,21 @@ $(document).ready(function () {
                     vm.childCategoryOld = child;
                     child.active = true;
                 }
+                var categoryId;
+                if(type==1){
+                    categoryId = vm.productList[vm.categoryIndex].category.id;
+                }else{
+                    categoryId = child.category.id;
+                }
+                //获取当前点击的数据
+                getProductList(categoryId);
             },
             productCollect:function(item){
-                console.log(item);
+                item.collect = !item.collect;
+            },
+            msgListView(curPage){
+                //根据当前页获取数据
+
             }
         },
     });
@@ -47,7 +64,7 @@ $(document).ready(function () {
                     }
                 });
                 vm.productList = response;
-                getProductList(vm.productList[0].id);
+                getProductList(vm.productList[0].category.id);
             }
         });
 
@@ -56,14 +73,26 @@ $(document).ready(function () {
      * @param categoryId
      */
     function getProductList(categoryId){
+        if(vm.loading){
+            return
+        }
+        vm.loading = true;
         ajax('js/service/productData.json')
             .then((response)=>{
-                if(response && response.length>0){
-                    response.forEach((date)=>{
-
-                    })
-                }
-                console.log(response)
+                vm.productItemList = [];
+                setTimeout(()=>{
+                    if(response && response.length>0){
+                        vm.loading = false;
+                        var product = response.find((date)=>{
+                            return date.categoryId == categoryId;
+                        });
+                        if(product){
+                            vm.productItemList = product.product;
+                        }else{
+                            vm.productItemList = [];
+                        }
+                    }
+                },500)
             });
     }
 

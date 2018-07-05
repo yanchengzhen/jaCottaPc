@@ -137,7 +137,7 @@
 
 /*产品信息盒子*/
 .productBox{
-
+    padding-bottom: 60px;
 }
 .categoryBox{
     width: 327px;
@@ -245,10 +245,11 @@
 }
 .productItemCollect{
     position: absolute;
-    width: 35px;
-    height: 31px;
+    width: 45px;
+    height: 41px;
     top: 20px;
     right: 20px;
+    padding: 5px;
 }
 .productName{
     font-size: 22px;
@@ -276,4 +277,39 @@
     margin-top: 10px;
 }
 
+/*没有产品数据*/
+.loading{
+    width: 873px;
+    height: 556px;
+    text-align: center;
+}
+.noProduct{
+    width: 873px;
+    height: 556px;
+    text-align: center;
+    padding-top: 50px;
+}
+.noProductText{
+    font-size: 18px;
+    margin-top: 45px;
+}
 
+/*分页样式*/
+.pagination > li > a, .pagination > li > span{
+    color: #333;
+    background-color: transparent;
+    border: 0;
+    font-size: 16px;
+    padding: 6px 24px;
+    font-family: RobotoRegular;
+}
+.pagination > li > a:hover, .pagination > li > span:hover, .pagination > li > a:focus, .pagination > li > span:focus{
+    color: #000;
+    background-color: transparent;
+    border-color: transparent;
+}
+.pagination > .active > a, .pagination > .active > span, .pagination > .active > a:hover, .pagination > .active > span:hover, .pagination > .active > a:focus, .pagination > .active > span:focus{
+    font-family: RobotoBold;
+    background-color: transparent;
+    color: #000;
+}
