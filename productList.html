@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:v-bind="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="UTF-8">
     <title>产品列表</title>
@@ -101,17 +101,108 @@
     </div>
 </div>
 <!--主体部分-->
-<div class="main main-pd">
+<div id="main" class="main-pd">
+    <!--轮播块-->
     <div style="height: 858px;">
         <div class="swiper-container" style="height: 100%;width: 100%;">
             <div class="swiper-wrapper">
                 <div class="swiper-slide">
-
+                    <img class="section2Bg" src="image/index/index_swiperBg2.jpg" alt="">
+                    <div class="slideMask"></div>
+                    <div class="in100 section2SlideTop">新 &nbsp;/&nbsp; 品 &nbsp;/&nbsp; 上 &nbsp;/&nbsp; 市</div>
+                    <div class="in100 section2SlideTitle">New arrivaL</div>
+                    <div class="in400 section2SlideDesBox">
+                        <div class="section2SlideDes">
+                            Gold rim dinnerware set
+                            <div class="section2SlideDesLeft"></div>
+                            <div class="section2SlideDesRight"></div>
+                        </div>
+                    </div>
+                    <div class="in100 section2SlideBtnBox">
+                        <div class="section2SlideBtn">VIEW COLLECTION</div>
+                    </div>
                 </div>
+                <div class="swiper-slide">
+                    <img class="section2Bg" src="image/index/index_swiperBg1.jpg" alt="">
+                    <div class="slideMask"></div>
+                    <div class="in100 section2SlideTop">新 &nbsp;/&nbsp; 品 &nbsp;/&nbsp; 上 &nbsp;/&nbsp; 市</div>
+                    <div class="in100 section2SlideTitle">New arrivaL</div>
+                    <div class="in400 section2SlideDesBox">
+                        <div class="section2SlideDes">
+                            Gold rim dinnerware set
+                            <div class="section2SlideDesLeft"></div>
+                            <div class="section2SlideDesRight"></div>
+                        </div>
+                    </div>
+                    <div class="in100 section2SlideBtnBox">
+                        <div class="section2SlideBtn">VIEW COLLECTION</div>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <img class="section2Bg" src="image/index/index_swiperBg3.jpg" alt="">
+                    <div class="slideMask"></div>
+                    <div class="in100 section2SlideTop">新 &nbsp;/&nbsp; 品 &nbsp;/&nbsp; 上 &nbsp;/&nbsp; 市</div>
+                    <div class="in100 section2SlideTitle">New arrivaL</div>
+                    <div class="in400 section2SlideDesBox">
+                        <div class="section2SlideDes">
+                            Gold rim dinnerware set
+                            <div class="section2SlideDesLeft"></div>
+                            <div class="section2SlideDesRight"></div>
+                        </div>
+                    </div>
+                    <div class="in100 section2SlideBtnBox">
+                        <div class="section2SlideBtn">VIEW COLLECTION</div>
+                    </div>
+                </div>
+            </div>
+            <!-- 如果需要分页器 -->
+            <div class="swiper-pagination"></div>
+        </div>
+    </div>
+    <!--产品展示块-->
+    <div class="main">
+        <!--面包屑导航-->
+        <div class="crumbs_nav">
+            <a href="index.html">HOME</a>-<span>MY ACCOUNT</span>
+        </div>
+        <div class="productBox float_clear border-t">
+            <!--产品分类盒子-->
+            <div class="categoryBox float-l">
+                <div class="categoryTitle">PRODUCT CATEGORIES</div>
+                <div class="categoryLine float_clear "
+                     v-for="(item,index) in productList"
+                     :class="{categoryLineActive:item.active}"
+                     @click="changeCategory(index)"
+                >
+                    <span class="float-l categoryLineText">{{item.category.name}}</span>
+                    <img v-if="item.categoryChildren" class="float-r categoryLineImg" src="image/rightArrow.png" alt="">
+                    <div v-if="item.categoryChildren" class="categoryChildBox">
+                        <div class="categoryChildLine float_clear"
+                             v-for="(child,index) in item.categoryChildren"
+                             :class="{categoryChildLineActive:child.active}"
+                             @click="changeChildCategory(child)"
+                        >
+                            <span class="float-l categoryChildLineText">{{child.category.name}}</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="productItem float-l"  v-for="(item,index) in productItemList">
+                <a href="productDetails.html" target="_blank">
+                    <div class="productItemImg">
+                        <img class="productPic" src="image/product01.png" alt="">
+                    </div>
+                    <div class="productName"><span>butterfly</span> dinnerware sets</div>
+                    <div class="productDetails">New design 4pcs bone china plate
+                        sets butterfly wedding dinnerware sets</div>
+                    <div class="productPrice">$9.85-15</div>
+                </a>
+                <img class="productItemCollect" title="Collect" src="image/collect1.png" @click="productCollect(item)">
             </div>
         </div>
     </div>
 </div>
+
 <!--公共底部样式-->
 <div class="footerBox">
     <div class="footerTop">
@@ -200,5 +291,7 @@
     <div class="toTopPoint"></div>
     <div class="toTopPoint"></div>
 </div>
+<script src="js/vue.min.js"></script>
+<script src="js/productList.js"></script>
 </body>
 </html>

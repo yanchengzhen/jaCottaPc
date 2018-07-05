@@ -1,0 +1,66 @@
+[
+  {
+    "category":{"id":1,"name":"NEW PRODUCTS"},
+    "active":true
+  },
+  {
+    "category":{"id":2,"name":"Wedding Dinnerware set"},
+    "active":false
+  },
+  {
+    "category":{"id":3,"name":"Hotel Dinnerware sets"},
+    "active":false
+  },
+  {
+    "category":{"id":4,"name":"Plate"},
+    "categoryChildren":[
+      {
+        "category":{"id":9,"name":"Charger plate"},
+        "active":false
+      },
+      {
+        "category":{"id":10,"name":"Dinner plate"},
+        "active":false
+      },
+      {
+        "category":{"id":11,"name":"Dessert plate"},
+        "active":false
+      },
+      {
+        "category":{"id":12,"name":"Bread plate"},
+        "active":false
+      },
+      {
+        "category":{"id":13,"name":"Ceramic plate"},
+        "active":false
+      }
+    ],
+    "active":false
+  },
+  {
+    "category":{"id":5,"name":"Bowl"},
+    "categoryChildren":[
+      {
+        "category":{"id":14,"name":"Ceramic bowl"},
+        "active":false
+      },
+      {
+        "category":{"id":15,"name":"Soup bowl"},
+        "active":false
+      }
+    ],
+    "active":false
+  },
+  {
+    "category":{"id":6,"name":"Ceramic Mug"},
+    "active":false
+  },
+  {
+    "category":{"id":7,"name":"Cup and saucer"},
+    "active":false
+  },
+  {
+    "category":{"id":8,"name":"Enamel Mug"},
+    "active":false
+  }
+]
