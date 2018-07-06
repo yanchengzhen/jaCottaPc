@@ -1,0 +1,109 @@
+/*公司介绍*/
+.company{
+  width: 100%;
+  height: 664px;
+  background-color: #fff;
+}
+.company .main{
+  overflow: hidden;
+}
+.company_main{
+  border-top: 2px solid #d8d8d3;
+  padding-top: 74px;
+}
+.company_text{
+  float: left;
+  width: 660px;
+  position: relative;
+  height: 545px;
+}
+.company_title{
+  margin: 0;
+  font-family: Roboto;
+  font-size: 34px;
+  color: #000;
+  font-weight: normal;
+  margin-top: 50px;
+  transition: all linear .5s;
+  -webkit-transition: all linear .5s;
+  -moz-transition: all linear .5s;
+  -o-transition: all linear .5s;
+  position: absolute;
+  top:-128px;
+  opacity: 0;
+}
+
+.company_text p{
+  font-family: Avenir Next;
+  font-size: 14px;
+  line-height: 1.5;
+  color: #000;
+  margin-bottom: 0;
+}
+.company_text>div{
+  position: absolute;
+  transition: all linear .5s;
+  -webkit-transition: all linear .5s;
+  -moz-transition: all linear .5s;
+  -o-transition: all linear .5s;
+  bottom:-150px;
+  opacity: 0;
+}
+.text-1:first-letter {
+  font-family: Avenir Next,Regular;
+  font-size:80px;
+  /*font-weight:600;*/
+  float:left;
+  margin-top:14px;
+  line-height: 70px;
+}
+.text-1{
+  margin-top: 100px;
+}
+.text-2{
+  text-indent:3em;
+}
+.company_img{
+  float: left;
+  margin-left: 54px;
+  position: relative;
+  width: 400px;
+  height: 545px;
+}
+.company_img>div{
+  position: absolute;
+  transition: all linear .5s;
+  -webkit-transition: all linear .5s;
+  -moz-transition: all linear .5s;
+  -o-transition: all linear  .5s;
+  left: 300px;
+  opacity: 0;
+}
+.company_title.active{
+  top:0;
+  opacity: 1;
+}
+.company_text>div.active{
+  bottom:152px;
+  opacity:1;
+}
+.company_img>div.active{
+  left: 0;
+  opacity: 1;
+}
+.dedign-concept{
+  height: 1200px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
