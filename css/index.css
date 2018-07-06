@@ -292,9 +292,10 @@
     background-color: #000;
     border-radius: 50%;
 }
-.section3TitleRightText{
+.section3TitleRightText a{
     font-size: 14px;
     font-weight: bold;
+    font-family: Heavy;
 }
 .section3TitleRightBorder{
     width: 29px;
@@ -581,9 +582,12 @@
 }
 .section5DesBtn{
     margin-top: 22px;
-    font-size: 14px;
-    font-weight: bold;
 }
+.section5DesBtn a{
+    font-family: Heavy;
+    font-size: 14px;
+}
+
 .section5DesBorder{
     width: 29px;
     height: 3px;

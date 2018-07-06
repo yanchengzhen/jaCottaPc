@@ -38,7 +38,6 @@ var pageComponent = Vue.extend({
     }, methods: {
         goPage(page) {
             if (page != this.curPage) {
-                console.log(page);
                 this.curPage = page;
                 this.$emit('navpage', this.curPage);
             } else {

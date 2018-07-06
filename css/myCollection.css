@@ -1,0 +1,18 @@
+.productItem:nth-child(2), .productItem:nth-child(3){
+    margin-top: 0;
+}
+.productItemDelete{
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    padding: 10px;
+    visibility: hidden;
+    opacity: 0;
+    transition: all 0.3s;
+}
+.productItem:hover .productItemDelete{
+    top: 0;
+    right: 0;
+    visibility: visible;
+    opacity: 1;
+}

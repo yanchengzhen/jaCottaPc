@@ -30,6 +30,7 @@ body{
     width: 1200px;
     margin: 0 auto;
     position: relative;
+    height: 100%;
 }
 .main:after{
     content: "";
@@ -41,7 +42,7 @@ body{
 .crumbs_nav{
     color: #000;
     font-size: 16px;
-    padding: 15px 0;
+    padding: 25px 0;
 }
 .crumbs_nav a{
     color: #000;
@@ -292,18 +293,12 @@ a:hover{
 .headerCategoriesBox{
     position: absolute;
     width: 802px;
-    height: 373px;
+    height: 376px;
     background-color: #fff;
     top: 126px;
     left: -120px;
-    visibility: hidden;
-    opacity: 0;
-    transition: all 0.3s;
+    display: none;
     border: 1px solid #ccc;
-}
-.headerTap:hover .headerCategoriesBox{
-    visibility: visible;
-    opacity: 1;
 }
 .headerCategoriesItem{
     width: 200px;
@@ -557,4 +552,81 @@ a:hover{
     border-radius: 50%;
     background: #a0a0a0;
     margin: 7px auto 0 auto;
+}
+
+/*左侧功能栏样式*/
+.categoryBox{
+    width: 327px;
+    background-color: #f0f5fd;
+    text-align: left;
+    padding-left: 12px;
+    padding-bottom: 20px;
+}
+.categoryTitle{
+    font-size: 24px;
+    color: #000;
+    font-weight: bold;
+    margin: 35px 0 30px 0;
+    font-family:Bold;
+}
+.categoryLine{
+    height: 55px;
+    line-height: 55px;
+    cursor: pointer;
+    position: relative;
+}
+.categoryLineText{
+    font-size: 18px;
+    font-family: RobotoRegular;
+    color: #333;
+}
+.categoryLine:hover .categoryLineText{
+    font-family:RobotoBold;
+}
+.categoryLineActive .categoryLineText{
+    font-family:RobotoBold;
+}
+.categoryLineImg{
+    margin-top: 19px;
+    margin-right: 15px;
+    height: 14px;
+    width: 8px;
+}
+.categoryChildBox{
+    position: absolute;
+    right: -150px;
+    width: 250px;
+    background-color: #fff;
+    border: 2px solid #f0f5fd;
+    z-index: 10;
+    visibility: hidden;
+    opacity: 0;
+    transition: all 0.3s;
+}
+.categoryLine:hover .categoryChildBox{
+    right: -250px;
+    visibility: visible;
+    opacity: 1;
+}
+.categoryChildLine{
+    height: 55px;
+    line-height: 55px;
+    padding-left: 15px;
+    cursor: pointer;
+}
+.categoryChildLineText{
+    font-size: 18px;
+    font-family: RobotoRegular;
+}
+.categoryChildLine:hover{
+    background-color: #f0f5fd;
+}
+.categoryChildLineActive{
+    background-color: #f0f5fd;
+}
+.categoryChildLine:hover .categoryChildLineText{
+    font-family:RobotoBold;
+}
+.categoryChildLineActive .categoryChildLineText{
+    font-family:RobotoBold;
 }

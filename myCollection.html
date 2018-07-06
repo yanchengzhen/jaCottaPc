@@ -3,12 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <title>我的收藏</title>
-    <link rel="stylesheet" href="css/swiper.min.css">
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/productList.css">
     <link rel="stylesheet" href="css/myCollection.css">
     <link rel="stylesheet" href="css/global.css">
     <script src="js/jquery-1.8.3.min.js"></script>
     <script src="js/jquery-ui-1.10.3.min.js"></script>
-    <script src="js/swiper.min.js"></script>
     <script src="js/global.js"></script>
     <!--[if lte IE 8]>
     <div class="ifIE8Box">
@@ -26,7 +26,7 @@
         <div class="headerItem headerTap float-l">
             <a href="index.html" target="_blank">HOME</a>
         </div>
-        <div class="headerItem headerTap on float-l">
+        <div class="headerItem headerTap on float-l" id="headerCategories">
             <a href="productList.html" target="_blank">PRODUCT CATEGORIES</a>
             <div class="headerCategoriesBox float_clear">
                 <div class="headerCategoriesItem border-r border-b float-l">
@@ -102,7 +102,48 @@
 </div>
 <!--主体部分-->
 <div id="main" class="main main-pd">
-
+    <!--面包屑导航-->
+    <div class="crumbs_nav">
+        <a href="index.html">HOME</a>-<span>MY ACCOUNT</span>
+    </div>
+    <div class="productBox float_clear">
+        <!--产品分类盒子-->
+        <div class="categoryBox float-l">
+            <div class="categoryTitle">MY ACCOUNT</div>
+            <a href="personalInformation.html" target="_blank">
+                <div class="categoryLine float_clear">
+                    <span class="float-l categoryLineText">PERSONAL DATA</span>
+                </div>
+            </a>
+            <div class="categoryLine categoryLineActive float_clear">
+                <span class="float-l categoryLineText">MY COLLECTION</span>
+                <img class="float-r categoryLineImg" src="image/rightArrow.png" alt="">
+            </div>
+        </div>
+        <!--产品列表-->
+        <div class="productItem float-l"  v-for="(item,index) in productItemList">
+            <a href="productDetails.html" target="_blank">
+                <div class="productItemImg">
+                    <img class="productPic" :src="item.pic" alt="">
+                </div>
+                <div class="productName"><span>{{item.model}}</span> {{item.name}}</div>
+                <div class="productDetails">{{item.details}}</div>
+                <div class="productPrice">{{item.price}}</div>
+            </a>
+            <img class="productItemDelete" title="Delete" src="image/delete.png">
+        </div>
+        <!--加载中-->
+        <div class="loading float-l" v-if="loading">
+            <img src="image/loading.gif" alt="">
+        </div>
+        <!--没有数据-->
+        <div class="noProduct float-l" v-if="!loading && productItemList.length==0">
+            <img src="image/noProduct.png" alt="">
+            <div class="noProductText">No related products, please look forward to</div>
+        </div>
+        <!--分页-->
+        <navigation v-if="productItemList.length!=0" :pages="pages" :current.sync="pageNo" @navpage="msgListView"></navigation>
+    </div>
 </div>
 <!--公共底部样式-->
 <div class="footerBox">
@@ -193,6 +234,7 @@
     <div class="toTopPoint"></div>
 </div>
 <script src="js/vue.min.js"></script>
-<script src="js/productList.js"></script>
+<script src="js/myCollection.js"></script>
+<script src="js/pagination.js"></script>
 </body>
 </html>

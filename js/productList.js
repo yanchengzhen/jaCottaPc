@@ -101,7 +101,8 @@ $(document).ready(function () {
         loop: false,
         autoplay: false,
         pagination: {
-            el: '.swiper-pagination'
+            el: '.swiper-pagination',
+            clickable:true
         }
     });
 

@@ -11,6 +11,11 @@ $(document).ready(function () {
         e.stopPropagation();
         changeBorder($(".headerBoxContent .on").outerWidth(true),$(".headerBoxContent .on").position().left);
     });
+    $("#headerCategories").hover(function(){
+        $(".headerCategoriesBox").stop().slideDown()
+    },function () {
+        $(".headerCategoriesBox").stop().slideUp()
+    });
 
     /**
      * 改变头部border状态
