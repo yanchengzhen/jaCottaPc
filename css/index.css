@@ -759,36 +759,3 @@
     position: absolute;
     bottom: 0;
 }
-/*字体进入效果*/
-.in100{
-    transition: all 1s cubic-bezier(0.215, 0.61, 0.355, 1) 0.1s;
-    transition-duration: .8s;
-}
-.in200{
-    transition: all 1s cubic-bezier(0.215, 0.61, 0.355, 1) 0.2s;
-    transition-duration: .8s;
-}
-.in300{
-    transition: all 1s cubic-bezier(0.215, 0.61, 0.355, 1) 0.3s;
-    transition-duration: .8s;
-}
-.in400{
-    transition: all 1s cubic-bezier(0.215, 0.61, 0.355, 1) 0.4s;
-    transition-duration:.8s;
-}
-.in500{
-    transition: all 1s cubic-bezier(0.215, 0.61, 0.355, 1) 0.5s;
-    transition-duration:.8s;
-}
-.in600{
-    transition: all 1s cubic-bezier(0.215, 0.61, 0.355, 1) 0.6s;
-    transition-duration: .8s;
-}
-.in700{
-    transition: all 1s cubic-bezier(0.215, 0.61, 0.355, 1) 0.7s;
-    transition-duration: .8s;
-}
-.in800{
-    transition: all 1s cubic-bezier(0.215, 0.61, 0.355, 1) 0.8s;
-    transition-duration: .8s;
-}

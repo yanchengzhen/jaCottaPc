@@ -1,3 +1,12 @@
+.mask{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: rgba(0,0,0,0.7);
+    z-index: -1;
+}
 /*公司介绍*/
 .company{
   width: 100%;
@@ -91,19 +100,348 @@
   left: 0;
   opacity: 1;
 }
+
+/*设计理念*/
 .dedign-concept{
-  height: 1200px;
+    height: 532px;
+    background:url("../image/companyProfile/companyBg1.png") no-repeat;
+    background-size: cover;
+     position: relative;
+}
+.conceptTitle{
+    font-size: 60px;
+    font-family: Heavy;
+    text-align: center;
+    color: #fff;
+    padding: 30px 0 20px 0;
+}
+.conceptBox{
+    text-align: center;
+}
+.conceptItem{
+    display: inline-block;
+    width: 445px;
+    text-align: center;
+}
+.conceptItemImgBox{
+    width: 144px;
+    height: 144px;
+    line-height: 144px;
+    border: 6px solid #000;
+    margin: 0 auto;
+    text-align: center;
+}
+.conceptItemImgBox>img{
+    width: 92px;
+    display:inline-block;
+    vertical-align: middle;
+}
+.conceptItemText{
+    font-size: 32px;
+    color: #fff;
+    margin-top: 75px;
+}
+/*公司历程*/
+.history{
+    height: 712px;
+    width: 1200px;
+    margin: 0 auto;
+    padding-top: 125px;
+}
+.historyBox{
+    width: 1200px;
+    height: 500px;
+    position: relative;
+}
+.historyLeftImg1{
+    position: absolute;
+    width: 393px;
+    height: 482px;
+    top: 9px;
+    left: -300px;
+    opacity: 0;
+}
+.historyLeftImg1In{
+    opacity: 1;
+    left: 0;
+}
+.historyLeftImg2{
+    position: absolute;
+    top: 0;
+    left: -410px;
+    width: 323px;
+    height: 500px;
+    opacity: 0;
+}
+.historyLeftImg2In{
+    left: 410px;
+    opacity: 1;
+}
+.historyRightBox{
+    position: absolute;
+    top: 155px;
+    width: 375px;
+    right: -400px;
+    opacity: 0;
+}
+.historyRightBoxIn{
+    right: 0;
+    opacity: 1;
+}
+.historyTitle{
+    font-size: 30px;
+    margin-bottom: 14px;
+}
+.titleBorder {
+    width: 70px;
+    height: 2px;
+    margin-top: 1px;
+    background-color: #555555;
+}
+.titlePoint {
+    width: 4px;
+    height: 4px;
+    margin-left: 4px;
+    background-color: #000;
+    border-radius: 50%;
+}
+.historyDetail{
+    margin-top: 50px;
+    font-size: 16px;
+    height: 260px;
+    line-height: 1.4;
+}
+.historyRound{
+    border: 1px solid #000;
+    width: 42px;
+    height: 42px;
+    line-height: 42px;
+    border-radius: 50%;
+    text-align: center;
+    margin-right: 12px;
+    bottom: 0;
+    top: auto;
+    background-size: 11px 44px;
+}
+.historyRoundNext{
+    left: 0;
+}
+.historyRoundPrev{
+    left: 54px;
+}
+.historyRound:hover{
+    border-color: #66afe9;
+    outline: 0;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(102,175,233,.6);
+    box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(102,175,233,.6);
+    color: #66afe9;
+}
+/*团队*/
+.team{
+    height: 1360px;
+    background: #000;
+}
+.teamTitle{
+    padding-top: 75px;
+    text-align: center;
+    color: #fff;
+    font-size: 36px;
+    font-family: Heavy;
+}
+.teamBorder{
+    width: 150px;
+    height: 2px;
+    background-color: #fff;
+    margin: 15px auto;
+}
+.teamItemBox{
+    width: 1200px;
+    margin: 0 auto 60px auto;
+}
+.teamItem{
+    width: 383px;
+    margin: 0 8.5px;
+}
+.teamItemImg img{
+    width: 383px;
+    height: 383px;
+}
+.teamItemText{
+    text-align: center;
+    margin: 47px 0;
+}
+.teamItemText a{
+    font-size: 16px;
+    font-family: RobotoRegular;
+    color: #fff;
+    transition: all 0.3s;
+}
+.teamItemText a:hover{
+    font-family: RobotoBold;
+}
+/*分页器定义*/
+.pagination > .active > a, .pagination > .active > span, .pagination > .active > a:hover, .pagination > .active > span:hover, .pagination > .active > a:focus, .pagination > .active > span:focus{
+    color: #fff;
+}
+.pagination > li > a, .pagination > li > span{
+    color: #fff;
+}
+.pagination > li > a:hover, .pagination > li > span:hover, .pagination > li > a:focus, .pagination > li > span:focus{
+    color: #fff;
+}
+.pagination > .disabled > span, .pagination > .disabled > span:hover, .pagination > .disabled > span:focus, .pagination > .disabled > a, .pagination > .disabled > a:hover, .pagination > .disabled > a:focus{
+    background-color: #000;
 }
 
+/*.荣誉*/
+.honor{
+    height: 885px;
+    padding-top: 70px;
+    background-color: #e5e5e5;
+}
+.honorTitle{
+    color: #000;
+    font-family: Heavy;
+    font-size: 36px;
+    text-align: center;
+    margin-bottom: 15px;
+}
+.honorBorder{
+    width: 57px;
+    height: 2px;
+    margin: 0 auto;
+    background-color: #000;
+}
+.honorBox{
+    margin-top: 77px;
+}
+.honorItem{
+    position: relative;
+    float: left;
+    overflow: hidden;
+    width: 48%;
+    height: auto;
+    text-align: center;
+    cursor: pointer;
+}
+.honorItemImg{
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 100%;
+    opacity: 0.9;
+    -webkit-transition: opacity 0.35s;
+    transition: opacity 0.35s;
+}
+.honorBoxLeft{
+    width: 480px;
+    height: 480px;
+}
+.honorBoxRight{
+    width: 695px;
+}
+.honorBoxRightItem{
+    width: 220px;
+    height: 230px;
+    margin-left: 17px;
+}
+.honorBoxRightItem:nth-child(1),.honorBoxRightItem:nth-child(2),.honorBoxRightItem:nth-child(3){
+    margin-bottom: 20px;
+}
+.honorBoxRightItem:nth-child(1),.honorBoxRightItem:nth-child(4){
+    margin-left: 0;
+}
+.honorItemBox{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    padding: 5%;
+    color: #fff;
+    text-transform: uppercase;
+    font-size: 25px;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+}
+.honorItemBox::before{
+    position: absolute;
+    top: 8%;
+    right: 8%;
+    bottom: 8%;
+    left: 8%;
+    border: 2px solid #fff;
+    box-shadow: 0 0 0 40px rgba(0,0,0,0.3);
+    content: '';
+    opacity: 0;
+    -webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
+    transition: opacity 0.35s, transform 0.35s;
+    -webkit-transform: scale3d(1.4,1.4,1);
+    transform: scale3d(1.4,1.4,1);
+}
+.honorItem:hover .honorItemBox{
+    background-color: rgba(58,52,42,0);
+}
+.honorItem:hover .honorItemBox::before{
+    opacity: 1;
+    -webkit-transform: scale3d(1,1,1);
+    transform: scale3d(1,1,1);
+    background: rgba(0,0,0,0.7);
+}
+.honorItem p{
+    letter-spacing: 1px;
+    font-size: 15px;
+    padding: 10%;
+    opacity: 0;
+    margin-top: 21%;
+    -webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
+    transition: opacity 0.35s, transform 0.35s;
+    -webkit-transform: scale(1.5);
+    transform: scale(1.5);
+}
+.honorBoxLeft p{
+    font-size: 20px;
+}
+.honorItem:hover p{
+    opacity: 1;
+    -webkit-transform: scale3d(1,1,1);
+    transform: scale3d(1,1,1);
+}
 
-
-
-
-
-
-
-
-
-
-
-
+/*点击公司荣誉图片弹出的轮播块*/
+.honorSwiperBox{
+    background-color: #000;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    z-index: 100;
+    visibility: hidden;
+}
+.honorSwiper{
+    width: 100%;
+    height: 70vh;
+    margin-top: 15vh;
+}
+.honorSwiperItem{
+    width: 100%;
+    height: 100%;
+    text-align: center;
+}
+.honorSwiperImg{
+    height: 100%;
+    width: auto;
+}
+.honorSwiperClose{
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: url(../image/companyProfile/close.png) no-repeat center center;
+    background-size: 27px;
+    width: 60px;
+    height: 60px;
+    border: 2px solid #fff;
+    border-radius: 50%;
+    cursor: pointer;
+}

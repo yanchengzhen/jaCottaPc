@@ -181,6 +181,43 @@
                     <div class="chatName">Tiffany</div>
                     <div class="chatText"><a href="javascript:void(0)">CHAT NOW</a></div>
                 </div>
+                <div class="chatItem float-l">
+                    <div class="chatImgBox">
+                        <img src="image/contact/personal2.png" alt="">
+                    </div>
+                    <div class="chatName">Edwian</div>
+                    <div class="chatText"><a href="javascript:void(0)">CHAT NOW</a></div>
+                </div>
+                <div class="chatItem float-l">
+                    <div class="chatImgBox">
+                        <img src="image/contact/personal3.png" alt="">
+                    </div>
+                    <div class="chatName">Caroline</div>
+                    <div class="chatText"><a href="javascript:void(0)">CHAT NOW</a></div>
+                </div>
+            </div>
+            <div class="contactDes">WE SHOW YOU THE EASIEST WAY TO OUR COMPANY</div>
+            <div class="contactRouteTitle">COMPANY ROUTE</div>
+            <div class="contactRouteBorder"></div>
+            <div class="contactRouteBox">
+                <div class="contactRouteItem">
+                    <img class="contactRouteItemImg" src="image/contact/location.png" alt="">
+                    <div>No. 2304, Floor 23, Mansion 1, Kangning Street, Xiao
+                        dian Dist, Taiyuan, Shanxi, China </div>
+                </div>
+                <div class="contactRouteItem">
+                    <img class="contactRouteItemImg" src="image/contact/phone.png" alt="">
+                    <div>+86（0）351-8207810<br/>
+                        +86 18636943639</div>
+                </div>
+                <div class="contactRouteItem">
+                    <img class="contactRouteItemImg" src="image/contact/email.png" alt="">
+                    <div>http://www.jktrade.en.alibaba.com<br/>
+                        http://www.jkporcelain.en.alibaba.com</div>
+                </div>
+                <div class="contactRouteMapBox">
+                    <div id="contactRouteMap"></div>
+                </div>
             </div>
         </div>
     </div>
@@ -275,5 +312,16 @@
 </div>
 <script src="js/vue.min.js"></script>
 <script src="js/contactUs.js"></script>
+<script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=1t51luG5BxGrGLW4y9zu3sS6Tz8O3vAG"></script>
+<script>
+    // 百度地图API功能
+    var map = new BMap.Map("contactRouteMap");
+    var point = new BMap.Point(112.580034, 37.74937);
+    map.centerAndZoom(point, 15);
+    map.enableScrollWheelZoom();   //启用滚轮放大缩小，默认禁用
+    map.enableContinuousZoom();    //启用地图惯性拖拽，默认禁用
+    var marker = new BMap.Marker(point);  // 创建标注
+    map.addOverlay(marker);               // 将标注添加到地图中
+</script>
 </body>
 </html>

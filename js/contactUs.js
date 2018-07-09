@@ -1,7 +1,5 @@
 $(document).ready(function () {
 
-
-
     // 轮播初始化
     new Swiper('.swiper-container', {
         loop: false,
@@ -19,4 +17,5 @@ $(document).ready(function () {
         $('.section2SlideDesBox').addClass("section2DesIn");
         $('.section2SlideBtnBox').addClass("section2BtnIn");
     },200)
-})
+
+});

@@ -1,9 +1,10 @@
 .contactBox{
     border-top: 1px solid #d8d8d3;
+    padding-bottom: 125px;
 }
 .titleBox{
-    padding-bottom: 12px;
     position: relative;
+    padding:0 8px 12px 8px;
 }
 .titleText{
     font-size: 24px;
@@ -44,10 +45,14 @@
     width: 383px;
     padding-bottom: 130px;
     text-align: center;
+    margin: 0 8px;
+    position: relative;
 }
+
 .chatImgBox{
     width: 383px;
     height: 383px;
+    overflow: hidden;
 }
 .chatImgBox img{
     width: 100%;
@@ -66,4 +71,45 @@
 }
 .chatText a:hover{
     color: #2D72FF;
+}
+
+.contactDes{
+    font-size: 24px;
+    text-align: center;
+}
+.contactRouteTitle{
+    font-size: 36px;
+    font-family: Heavy;
+    text-align: center;
+}
+.contactRouteBorder{
+    width: 150px;
+    height: 2px;
+    margin: 15px auto 60px auto;
+    background-color: #434343;
+}
+.contactRouteBox{
+    text-align: center;
+}
+.contactRouteItem{
+    display: inline-block;
+    text-align: center;
+    max-width: 330px;
+    min-width: 280px;
+    height: 130px;
+    line-height: 20px;
+    font-size: 16px;
+}
+.contactRouteItemImg{
+    width: 28px;
+    margin-bottom: 10px;
+}
+
+.contactRouteMapBox{
+    width: 1200px;
+    height: 462px;
+}
+#contactRouteMap{
+    width: 1200px;
+    height: 462px;
 }
