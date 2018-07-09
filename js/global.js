@@ -1,19 +1,19 @@
 $(document).ready(function () {
-    setTimeout(()=>{
+    setTimeout(() => {
         //为头部移动border赋值 宽 left值
-        changeBorder($(".headerBoxContent .on").outerWidth(true),$(".headerBoxContent .on").position().left);
-    },100);
-    $(".headerTap").on("mouseenter",function(e){
+        changeBorder($(".headerBoxContent .on").outerWidth(true), $(".headerBoxContent .on").position().left);
+    }, 100);
+    $(".headerTap").on("mouseenter", function (e) {
         e.stopPropagation();
-        changeBorder($(this).outerWidth(true),$(this).position().left);
+        changeBorder($(this).outerWidth(true), $(this).position().left);
     });
-    $(".headerTap").on("mouseleave",function(e){
+    $(".headerTap").on("mouseleave", function (e) {
         e.stopPropagation();
-        changeBorder($(".headerBoxContent .on").outerWidth(true),$(".headerBoxContent .on").position().left);
+        changeBorder($(".headerBoxContent .on").outerWidth(true), $(".headerBoxContent .on").position().left);
     });
-    $("#headerCategories").hover(function(){
+    $("#headerCategories").hover(function () {
         $(".headerCategoriesBox").stop().slideDown()
-    },function () {
+    }, function () {
         $(".headerCategoriesBox").stop().slideUp()
     });
 
@@ -22,9 +22,9 @@ $(document).ready(function () {
      * @param width
      * @param left
      */
-    function changeBorder(width,left){
-        $(".headerTapBorder").css("width",width);
-        $(".headerTapBorder").css("left",left);
+    function changeBorder(width, left) {
+        $(".headerTapBorder").css("width", width);
+        $(".headerTapBorder").css("left", left);
     }
 
     //点击搜索按钮弹出搜索框
@@ -47,6 +47,20 @@ $(document).ready(function () {
             $("body").unbind("mousedown", onBodyDown);
         }
     }
+
+    $(window).scroll(function () {
+        if ($(this).scrollTop() > 500) {
+            $('.toTopBox').fadeIn();
+        } else {
+            $('.toTopBox').fadeOut();
+        }
+    });
+
+    $('.toTopBtn').click(function () {
+        $('html ,body').animate({scrollTop: 0}, 300);
+        return false;
+    });
+
 });
 
 /**
@@ -55,7 +69,7 @@ $(document).ready(function () {
  * @param data
  * @returns {Promise<any>}
  */
-function ajax(url,data) {
+function ajax(url, data) {
     return new Promise(function (resolve, reject) {
         $.ajax({
             url: url,
@@ -69,7 +83,7 @@ function ajax(url,data) {
             },
             error: function (XMLHttpRequest, textStatus, errorThrown) {
 
-                switch (XMLHttpRequest.status){
+                switch (XMLHttpRequest.status) {
                     case(500):
                         reject('服务器系统内部错误');
                         break;
