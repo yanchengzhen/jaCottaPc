@@ -234,35 +234,50 @@ a:hover{
     margin-right: 27px;
     margin-bottom: -2px;
 }
-.headerSearch>img{
-    margin-right: 31px;
-    margin-bottom: -2px;
+.headerSearch{
+    width: auto;
+    line-height: normal;
+    transition: all 1s;
+}
+.headerSearch img{
+    float: left;
 }
 .headerSearchBox{
-    position: absolute;
-    bottom: -38px;
-    right: 0;
-    width: 285px;
+    width: 28px;
     height: 30px;
-    transition: all 0.3s;
-    opacity: 0;
-    visibility: hidden;
+    overflow: hidden;
+    text-align: left;
+    padding: 8px;
+    margin-top: 46px;
+    transition: all 1s;
+    margin-right: 31px;
+    border-radius: 14px;
+    text-overflow:ellipsis;
 }
 .headerSearchBoxShow{
-    bottom: 0;
-    opacity: 1;
-    visibility: visible;
+    width: 198px;
+    background-color: rgba(255,255,255,.7);
 }
 .headerSearchInput{
     float: left;
-    width: 224px;
-    height: 30px;
+    width: 0;
     font-size: 16px;
     outline: none;
-    padding-left: 10px;
-    border: 1px solid #fff;
+    padding-left: 0;
     background-color: transparent;
     color: #fff;
+    transition: all 1s;
+    box-sizing: border-box;
+    border: 0;
+    opacity: 0;
+}
+.headerSearchInput:focus{
+    box-shadow:none;
+}
+.headerSearchInput.active{
+    width: 162px;
+    padding-left:10px;
+    opacity: 1;
 }
 .headerSearchBtn{
     float: left;
