@@ -292,17 +292,6 @@
     background-color: #000;
     border-radius: 50%;
 }
-.section3TitleRightText a{
-    font-size: 14px;
-    font-weight: bold;
-    font-family: Heavy;
-}
-.section3TitleRightBorder{
-    width: 29px;
-    height: 3px;
-    background-color: #dddddd;
-    margin: 7px 15px 0 0;
-}
 .section3ProductBox{
     width: 1149px;
     margin: 45px auto 0 auto;
@@ -568,7 +557,7 @@
     font-family: Heavy;
 }
 .section5TitleBoxIn{
-    left: 1045px;
+    left: 1085px;
 }
 .section5DesBox{
     position: absolute;
@@ -578,7 +567,7 @@
     text-align: left;
 }
 .section5DesBoxIn{
-    left: 1045px;
+    left: 1085px;
 }
 .section5DesBtn{
     margin-top: 22px;
@@ -759,3 +748,4 @@
     position: absolute;
     bottom: 0;
 }
+

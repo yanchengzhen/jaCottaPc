@@ -99,7 +99,7 @@
   </div>
 </div>
 <!--主体部分-->
-<div class="main_box main-pd">
+<div id="main" class="main_box main-pd">
   <div class="mask"></div>
   <div class="main">
     <!--面包屑导航-->
@@ -117,12 +117,12 @@
         </div>
         <div class="first_name">
           <label for="first_name">First Name</label>
-          <input type="text" id="first_name">
+          <input type="text" id="first_name" v-model="userName">
           <p>This field is required.</p>
         </div>
         <div class="last_name">
           <label for="last_name">Last Name</label>
-          <input type="text" id="last_name">
+          <input type="text" id="last_name" v-model="confirmUserName">
         </div>
       </div>
       <div class="register_LoginInformation">
@@ -241,5 +241,7 @@
   <div class="toTopPoint"></div>
   <div class="toTopPoint"></div>
 </div>
+<script src="js/plugins/vue.min.js"></script>
+<script src="js/register.js"></script>
 </body>
 </html>
