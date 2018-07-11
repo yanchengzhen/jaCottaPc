@@ -249,14 +249,13 @@ a:hover{
     text-align: left;
     padding: 8px;
     margin-top: 46px;
-    transition: all 1s;
+    transition: all linear .5s;
     margin-right: 31px;
-    border-radius: 14px;
-    text-overflow:ellipsis;
+    border-bottom-right-radius: 14px;
 }
 .headerSearchBoxShow{
     width: 198px;
-    background-color: rgba(255,255,255,.7);
+    border-bottom: 1px solid #fafafa;
 }
 .headerSearchInput{
     float: left;
@@ -266,7 +265,7 @@ a:hover{
     padding-left: 0;
     background-color: transparent;
     color: #fff;
-    transition: all 1s;
+    transition: all linear .5s;
     box-sizing: border-box;
     border: 0;
     opacity: 0;

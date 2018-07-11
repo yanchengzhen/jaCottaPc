@@ -29,7 +29,7 @@ $(document).ready(function () {
 
     //点击搜索按钮弹出搜索框
     $('#headerSearch').click(function () {
-        $("#headerSearchBox").toggleClass("headerSearchBoxShow").find("input").addClass("active");
+        $("#headerSearchBox").addClass("headerSearchBoxShow").find("input").addClass("active");
         $("body").bind("mousedown", onBodyDown);
     });
 

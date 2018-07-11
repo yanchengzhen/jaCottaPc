@@ -15,7 +15,6 @@
     background-color: #333;
 }
 .headerSearchInput{
-    border: 1px solid #cccccc;
     color: #000;
 }
 .headerSearchBtn{
@@ -33,6 +32,9 @@
     top: -7px;
     left: 34px;
     border: none;
+}
+.headerSearchBoxShow{
+    border-bottom: 1px solid #333;
 }
 
 
