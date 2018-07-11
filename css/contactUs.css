@@ -25,22 +25,10 @@
     border-radius: 50%;
 }
 .titleRightText{
-    font-size: 14px;
-    font-weight: bold;
-    font-family: Heavy;
     position: absolute;
     right: 0;
     top: 40px;
 }
-.titleRightBorder {
-    width: 29px;
-    height: 3px;
-    background-color: #dddddd;
-    position: absolute;
-    right: 90px;
-    top: 47px;
-}
-
 .chatItem{
     width: 383px;
     padding-bottom: 130px;
