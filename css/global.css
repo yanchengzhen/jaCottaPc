@@ -340,6 +340,7 @@ a:hover{
     font-size: 16px;
 }
 /*头部条产品分类弹出抽屉*/
+
 .headerCategoriesBox{
     position: absolute;
     width: 802px;
@@ -350,11 +351,25 @@ a:hover{
     display: none;
     border: 1px solid #ccc;
 }
+.headerItem:hover .headerCategoriesBox{
+    display: block;
+    -webkit-animation: myCategory 0.4s;
+    animation: myCategory 0.4s;
+}
+@keyframes myCategory {
+    0% {
+        top: 110px;
+        opacity: 0.5;
+    }
+    100% {
+        top: 126px;
+        opacity: 1;
+    }
+}
 .headerCategoriesItem{
     width: 200px;
     text-align: center;
     height: 187px;
-    line-height: 187px;
     position: relative;
     overflow: hidden;
 }
@@ -374,6 +389,32 @@ a:hover{
 }
 .headerCategoriesItem:hover .headerCategoriesItemPic{
     transform: scale(1.1);
+}
+.headerBox .headerCategoriesBtb{
+    position: absolute;
+    top: 68px;
+    left: 35px;
+    width: 130px;
+    height: 50px;
+    padding: 0;
+    line-height: 50px;
+    text-align: center;
+    font-family: Roboto;
+    font-weight: bold;
+    font-size: 16px;
+    border-radius: 6px;
+    background-color: #fff;
+    color: #000;
+    border: 1px solid #1b1b1b;
+    cursor: pointer;
+    box-sizing: border-box;
+    transition: all .5s;
+    -moz-animation: all .5s;
+    -webkit-transition: all .5s;
+    -o-animation: all .5s;
+}
+.headerBox .headerCategoriesBtb:hover{
+    font-size: 18px;
 }
 
 /*底部块*/
@@ -582,7 +623,7 @@ a:hover{
 .toTopBox{
     position: fixed;
     bottom: 160px;
-    right: 100px;
+    right: 0;
     width: 35px;
     display: none;
 }
@@ -595,13 +636,6 @@ a:hover{
     line-height: 31px;
     border: 1px solid #fff;
     cursor: pointer;
-}
-.toTopPoint{
-    width: 7px;
-    height: 7px;
-    border-radius: 50%;
-    background: #a0a0a0;
-    margin: 7px auto 0 auto;
 }
 
 /*左侧功能栏样式*/
