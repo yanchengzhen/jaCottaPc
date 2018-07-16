@@ -72,7 +72,7 @@
         </div>
 
         <div class="headerItem float-r">
-            <span>CH / EN</span>
+            <span class="headerCh">CH / EN</span>
         </div>
         <div class="headerItem headerLogin float-r">
             <img id="headerLogin" src="image/login1.png" alt="">
@@ -255,55 +255,26 @@
             <span>Meet The Team</span>
             <div class="teamBorder"></div>
         </div>
+        <div class="teamCategoryBox float_clear">
+            <div class="teamCategoryItem float-l" v-for="(category,index) in teamCategoryList"
+                 :class="{'teamCategoryItemActive':category.isActive}" @click="changeCategory(index)">
+                {{category.categoryName}}
+            </div>
+        </div>
         <div class="teamItemBox float_clear">
-            <div class="teamItem float-l">
+            <div class="teamItem float-l" v-for="item in teamList">
                 <div class="teamItemImg">
                     <img src="image/contact/personal1.png" alt="">
                 </div>
+                <div class="teamItemTitle">{{item.name}}</div>
+                <div class="teamItemDes">Sales Manager</div>
                 <div class="teamItemText">
                     <a href="javascript:void(0)">CHAT NOW</a>
                 </div>
             </div>
-            <div class="teamItem float-l">
-                <div class="teamItemImg">
-                    <img src="image/contact/personal2.png" alt="">
-                </div>
-                <div class="teamItemText">
-                    <a href="javascript:void(0)">CHAT NOW</a>
-                </div>
-            </div>
-            <div class="teamItem float-l">
-                <div class="teamItemImg">
-                    <img src="image/contact/personal3.png" alt="">
-                </div>
-                <div class="teamItemText">
-                    <a href="javascript:void(0)">CHAT NOW</a>
-                </div>
-            </div>
-            <div class="teamItem float-l">
-                <div class="teamItemImg">
-                    <img src="image/contact/personal4.png" alt="">
-                </div>
-                <div class="teamItemText">
-                    <a href="javascript:void(0)">CHAT NOW</a>
-                </div>
-            </div>
-            <div class="teamItem float-l">
-                <div class="teamItemImg">
-                    <img src="image/contact/personal5.png" alt="">
-                </div>
-                <div class="teamItemText">
-                    <a href="javascript:void(0)">CHAT NOW</a>
-                </div>
-            </div>
-            <div class="teamItem float-l">
-                <div class="teamItemImg">
-                    <img src="image/contact/personal1.png" alt="">
-                </div>
-                <div class="teamItemText">
-                    <a href="javascript:void(0)">CHAT NOW</a>
-                </div>
-            </div>
+        </div>
+        <div class="teamDescription">
+            {{teamDescription}}
         </div>
         <!--分页-->
         <navigation :pages="pages" :current.sync="pageNo" @navpage="msgListView"></navigation>

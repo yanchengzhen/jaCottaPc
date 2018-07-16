@@ -25,6 +25,8 @@ $(document).ready(function () {
     //点击搜索按钮弹出搜索框
     $('#headerSearch').click(function () {
         $("#headerSearchBox").addClass("headerSearchBoxShow").find("input").addClass("active");
+        $("#headerLogin").hide();
+        $(".headerCh").hide();
         $("body").bind("mousedown", onBodyDown);
     });
 
@@ -40,6 +42,8 @@ $(document).ready(function () {
             $("#headerSearchBox").removeClass("headerSearchBoxShow");
             $("#headerSearchBox input").removeClass("active");
             $("#headerLoginBox").removeClass("headerLoginBoxShow");
+            $("#headerLogin").show();
+            $(".headerCh").show();
             $("body").unbind("mousedown", onBodyDown);
         }
     }

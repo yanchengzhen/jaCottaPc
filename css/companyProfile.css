@@ -147,6 +147,7 @@
     width: 1200px;
     margin: 0 auto;
     padding-top: 125px;
+    overflow: hidden;
 }
 .historyBox{
     width: 1200px;
@@ -238,7 +239,7 @@
 }
 /*团队*/
 .team{
-    height: 1360px;
+    height: 1480px;
     background: #000;
 }
 .teamTitle{
@@ -254,30 +255,61 @@
     background-color: #fff;
     margin: 15px auto;
 }
+.teamCategoryBox{
+    margin: 60px auto;
+    width: 850px;
+}
+.teamCategoryItem{
+    width: 140px;
+    height: 35px;
+    line-height: 35px;
+    border: 1px solid #636363;
+    border-radius: 5px;
+    color: #fff;
+    font-size: 16px;
+    text-align: center;
+    margin: 0 15px;
+    cursor: pointer;
+}
+.teamCategoryItemActive{
+    border: 1px solid #fff;
+}
 .teamItemBox{
     width: 1200px;
-    margin: 0 auto 60px auto;
+    margin: 0 auto;
 }
 .teamItem{
     width: 383px;
-    margin: 0 8.5px;
+    margin: 0 8.5px 30px 8.5px;
+    text-align: center;
+    color: #fff;
 }
 .teamItemImg img{
     width: 383px;
     height: 383px;
 }
-.teamItemText{
-    text-align: center;
-    margin: 47px 0;
+.teamItemTitle{
+    font-size: 36px;
+    margin-top: 20px;
+}
+.teamItemDes{
+    font-size: 16px;
 }
 .teamItemText a{
     font-size: 16px;
-    font-family: RobotoRegular;
+    font-family: RobotoBold;
     color: #fff;
     transition: all 0.3s;
 }
 .teamItemText a:hover{
-    font-family: RobotoBold;
+    color: #1d82d4;
+}
+.teamDescription{
+    width: 400px;
+    margin: 0 auto 30px auto;
+    text-align: center;
+    color: #FFF;
+    font-size: 22px;
 }
 /*分页器定义*/
 .pagination > .active > a, .pagination > .active > span, .pagination > .active > a:hover, .pagination > .active > span:hover, .pagination > .active > a:focus, .pagination > .active > span:focus{

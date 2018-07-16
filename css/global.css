@@ -254,8 +254,10 @@ a:hover{
     border-bottom-right-radius: 14px;
 }
 .headerSearchBoxShow{
-    width: 198px;
+    width: 300px;
     border-bottom: 1px solid #fafafa;
+    position: absolute;
+    left: -330px;
 }
 .headerSearchInput{
     float: left;
@@ -274,7 +276,7 @@ a:hover{
     box-shadow:none;
 }
 .headerSearchInput.active{
-    width: 162px;
+    width: 260px;
     padding-left:10px;
     opacity: 1;
 }
@@ -623,7 +625,7 @@ a:hover{
 .toTopBox{
     position: fixed;
     bottom: 160px;
-    right: 0;
+    right: 100px;
     width: 35px;
     display: none;
 }
@@ -636,6 +638,13 @@ a:hover{
     line-height: 31px;
     border: 1px solid #fff;
     cursor: pointer;
+}
+.toTopPoint{
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: #a0a0a0;
+    margin: 7px auto 0 auto;
 }
 
 /*左侧功能栏样式*/

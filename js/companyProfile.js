@@ -3,16 +3,32 @@ $(document).ready(function () {
     var vm = new Vue({
         el: '#main',
         data: {
+            teamCategoryList: [],    //团队分类列表
+            categoryOldIndex:0,      //团队分类旧下标
+            teamList:[],             //团队成员列表
+            teamDescription:"",      //团队简介
             pageNo: 1,      //分页初始化到第几页
-            pages:2         //分页公共多少页
+            pages: 2         //分页公共多少页
         },
         methods: {
-            msgListView(curPage){
+            msgListView(curPage) {
                 //根据当前页获取数据
 
+            },
+            /**
+             * 改变团队分类
+             * @param index
+             */
+            changeCategory:function(index){
+                vm.teamCategoryList[vm.categoryOldIndex].isActive = false;
+                vm.categoryOldIndex = index;
+                vm.teamCategoryList[index].isActive = true;
+                vm.teamList = vm.teamCategoryList[index].categoryTeam;
+                vm.teamDescription = vm.teamCategoryList[index].description;
             }
         }
     });
+
     // banner轮播初始化
     new Swiper('.bannerSwiper', {
         loop: false,
@@ -41,11 +57,11 @@ $(document).ready(function () {
         $('.section2SlideBtnBox').addClass("section2BtnIn");
     }, 200);
 
-    $.fn.isOnScreen = function(){
+    $.fn.isOnScreen = function () {
         var win = $(window);
         var viewport = {
-            top : win.scrollTop(),
-            left : win.scrollLeft()
+            top: win.scrollTop(),
+            left: win.scrollLeft()
         };
         viewport.right = viewport.left + win.width();
         viewport.bottom = viewport.top + win.height();
@@ -61,7 +77,7 @@ $(document).ready(function () {
             $(".company_img>div").addClass("active");
             $(".company_text>div").addClass("active");
         }
-        if($(".historyBox").isOnScreen()){
+        if ($(".historyBox").isOnScreen()) {
             $(".historyLeftImg1").addClass("historyLeftImg1In");
             $(".historyLeftImg2").addClass("historyLeftImg2In");
             $(".historyRightBox").addClass("historyRightBoxIn");
@@ -78,13 +94,148 @@ $(document).ready(function () {
         }
     });
 
-    $(".honorItem").on("click",function(){
-        $(".honorSwiperBox").css("visibility","visible");
+    $(".honorItem").on("click", function () {
+        $(".honorSwiperBox").css("visibility", "visible");
         honorSwiper.slideTo($(this).attr("data-slide"), 0, false);
     });
-    $(".honorSwiperClose").on("click",function(){
-        $(".honorSwiperBox").css("visibility","hidden");
+    $(".honorSwiperClose").on("click", function () {
+        $(".honorSwiperBox").css("visibility", "hidden");
     });
 
+    /**
+     * 获取所有团队
+     */
+    function getTeamAll() {
+        vm.teamCategoryList = [
+            {
+                categoryName:"SALES",
+                isActive:true,
+                description:"We will give you more professional plans.",
+                categoryTeam:[
+                    {
+                        name:"Tiffany"
+                    },
+                    {
+                        name:"Edwina"
+                    },
+                    {
+                        name:"Caroline"
+                    },
+                    {
+                        name:"Tiffany1"
+                    },
+                    {
+                        name:"Tiffany2"
+                    },
+                    {
+                        name:"Tiffany3"
+                    }
+                ]
+            },
+            {
+                categoryName:"DESIGN",
+                isActive:false,
+                description:"Launch the new hot style in real time,make more money in the market.",
+                categoryTeam:[
+                    {
+                        name:"Tiffany2"
+                    },
+                    {
+                        name:"Edwina2"
+                    },
+                    {
+                        name:"Caroline2"
+                    },
+                    {
+                        name:"Tiffany3"
+                    },
+                    {
+                        name:"Tiffany4"
+                    },
+                    {
+                        name:"Tiffany5"
+                    }
+                ]
+            },
+            {
+                categoryName:"PRODUCTION",
+                isActive:false,
+                description:"We will finish your order on time with high quality.",
+                categoryTeam:[
+                    {
+                        name:"Tiffany3"
+                    },
+                    {
+                        name:"Edwina3"
+                    },
+                    {
+                        name:"Caroline3"
+                    },
+                    {
+                        name:"Tiffany3"
+                    },
+                    {
+                        name:"Tiffany3"
+                    },
+                    {
+                        name:"Tiffany3"
+                    }
+                ]
+            },
+            {
+                categoryName:"QUALITY TESTING",
+                isActive:false,
+                description:"In China,we are more strict to product than you.",
+                categoryTeam:[
+                    {
+                        name:"Tiffany4"
+                    },
+                    {
+                        name:"Edwina4"
+                    },
+                    {
+                        name:"Caroline4"
+                    },
+                    {
+                        name:"Tiffany4"
+                    },
+                    {
+                        name:"Tiffany4"
+                    },
+                    {
+                        name:"Tiffany4"
+                    }
+                ]
+            },
+            {
+                categoryName:"AFTER-SALES",
+                isActive:false,
+                description:"If you have any questions, feel free to contact us anytime.",
+                categoryTeam:[
+                    {
+                        name:"Tiffany5"
+                    },
+                    {
+                        name:"Edwina5"
+                    },
+                    {
+                        name:"Caroline5"
+                    },
+                    {
+                        name:"Tiffany5"
+                    },
+                    {
+                        name:"Tiffany5"
+                    },
+                    {
+                        name:"Tiffany5"
+                    }
+                ]
+            }
+        ];
+        vm.teamList = vm.teamCategoryList[0].categoryTeam;
+        vm.teamDescription = vm.teamCategoryList[0].description;
+    }
 
+    getTeamAll();
 });
