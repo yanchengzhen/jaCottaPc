@@ -60,8 +60,25 @@ $(document).ready(function () {
         $('html ,body').animate({scrollTop: 0}, 300);
         return false;
     });
-
 });
+
+//公共弹出框提示配置
+toastr.options = {
+    "closeButton": true,
+    "debug": false,
+    "progressBar": true,
+    "preventDuplicates": false,
+    "positionClass": "toast-bottom-center",
+    "onclick": null,
+    "showDuration": "400",
+    "hideDuration": "1000",
+    "timeOut": "3000",
+    "extendedTimeOut": "1000",
+    "showEasing": "swing",
+    "hideEasing": "linear",
+    "showMethod": "fadeIn",
+    "hideMethod": "fadeOut"
+};
 
 /**
  * 使用promise 重写ajax请求
@@ -75,14 +92,13 @@ function ajax(url, data) {
             url: url,
             type: data == null ? 'GET' : 'POST',
             dataType: "json",
-            data: data == null ? '' : JSON.stringify(data),
+            data: data == null ? '' : data,
             async: true,
-            contentType: "application/json",
+            // contentType: "application/json",
             success: function (resp) {
                 resolve(resp);
             },
             error: function (XMLHttpRequest, textStatus, errorThrown) {
-
                 switch (XMLHttpRequest.status) {
                     case(500):
                         reject('服务器系统内部错误');
