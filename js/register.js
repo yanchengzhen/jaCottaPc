@@ -28,7 +28,7 @@ $(document).ready(function () {
                         if(response && response.advice){
                             toastr.success("Registered successfully");
                             setTimeout(()=>{
-                                window.location.href="login.html?userName="+vm.firstName+" "+vm.lastName;
+                                window.location.href="login.html";
                             },2000);
                             vm.loading = false;
                         }else{

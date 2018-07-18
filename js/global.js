@@ -25,29 +25,48 @@ $(document).ready(function () {
     //点击搜索按钮弹出搜索框
     $('#headerSearch').click(function () {
         $("#headerSearchBox").addClass("headerSearchBoxShow").find("input").addClass("active");
-        $("#headerLogin").hide();
+        $(".headerLogin").hide();
         $(".headerCh").hide();
         $("body").bind("mousedown", onBodyDown);
     });
 
-    //点击登录按钮弹出搜索框
+    //点击登录按钮弹出登录框
     $('#headerLogin').click(function () {
+        $("#headerLoginBox").toggleClass("headerLoginBoxShow");
+        $("body").bind("mousedown", onBodyDown);
+    });
+    $('#headerLoginIn').click(function () {
         $("#headerLoginBox").toggleClass("headerLoginBoxShow");
         $("body").bind("mousedown", onBodyDown);
     });
 
     //点击除搜索框之外 关闭搜索框
     function onBodyDown(event) {
-        if (!(event.target.id == "headerSearch" || event.target.id == "headerLogin" || $(event.target).parents("#headerSearchBox").length > 0 || $(event.target).parents("#headerLoginBox").length > 0)) {
+        if (!(event.target.id == "headerSearch" || event.target.id == "headerLogin" || event.target.id == "headerLoginIn" || $(event.target).parents("#headerSearchBox").length > 0 || $(event.target).parents("#headerLoginBox").length > 0)) {
             $("#headerSearchBox").removeClass("headerSearchBoxShow");
             $("#headerSearchBox input").removeClass("active");
             $("#headerLoginBox").removeClass("headerLoginBoxShow");
-            $("#headerLogin").show();
+            $(".headerLogin").show();
             $(".headerCh").show();
             $("body").unbind("mousedown", onBodyDown);
         }
     }
 
+    // 通过查找localStorage->userName改变登录状态
+    changeLoginState();
+
+    /**
+     * 退出登录
+     */
+    $(".headerSignUpBtn").on("click",function(){
+       localStorage.removeItem("user");
+       changeLoginState();
+       window.location.href = "index.html";
+    });
+
+    /**
+     * 滑动判断返回顶部按钮是否显示
+     */
     $(window).scroll(function () {
         if ($(this).scrollTop() > 500) {
             $('.toTopBox').fadeIn();
@@ -55,7 +74,9 @@ $(document).ready(function () {
             $('.toTopBox').fadeOut();
         }
     });
-
+    /**
+     * 返回顶部按钮点击执行
+     */
     $('.toTopBtn').click(function () {
         $('html ,body').animate({scrollTop: 0}, 300);
         return false;
@@ -79,6 +100,24 @@ toastr.options = {
     "showMethod": "fadeIn",
     "hideMethod": "fadeOut"
 };
+
+/**
+ * 通过查找localStorage->userName改变登录状态
+ */
+function changeLoginState() {
+    if (localStorage.getItem("user")) {
+        $("#headerLogin").hide(); //头部登录按钮
+        $(".stateNotLogin").hide(); //登录弹框
+        $("#headerLoginIn").show();
+        $(".stateLogin").show();
+        $(".headerUserName").html(JSON.parse(localStorage.getItem("user")).userName);
+    } else {
+        $("#headerLogin").show();
+        $(".stateNotLogin").show();
+        $("#headerLoginIn").hide();
+        $(".stateLogin").hide();
+    }
+}
 
 /**
  * 使用promise 重写ajax请求

@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <title>产品详情</title>
   <link rel="stylesheet" href="css/plugins/swiper.min.css">
+  <link rel="stylesheet" href="css/plugins/toastr.min.css">
   <link rel="stylesheet" href="css/global.css">
   <link href="css/plugins/cloudzoom.css" rel="stylesheet"/>
   <link rel="stylesheet" href="css/productDetails.css">
@@ -11,6 +12,7 @@
   <script src="js/plugins/jquery-ui-1.10.3.min.js"></script>
   <script src="js/plugins/swiper.min.js"></script>
   <script src="js/plugins/cloudzoom.js"></script>
+  <script src="js/plugins/toastr.min.js"></script>
   <script src="js/global.js"></script>
   <!--[if lte IE 8]>
   <div class="ifIE8Box">
@@ -75,6 +77,7 @@
     </div>
     <div class="headerItem headerLogin float-r">
       <img id="headerLogin" src="image/login1.png" alt="">
+      <img id="headerLoginIn" src="image/personal.jpg" style="display: none">
     </div>
     <div class="headerItem headerSearch float-r">
       <!--搜索框-->
@@ -88,11 +91,27 @@
     <!--登录登出弹出按钮-->
     <div class="headerLoginBox" id="headerLoginBox">
       <div class="headerLoginTriangle"></div>
-      <div class="headerLoginLine border-b">
-        <a href="login.html">Sign In</a>
+      <div class="stateNotLogin">
+        <div class="headerLoginLine border-b">
+          <a href="login.html">Sign In</a>
+        </div>
+        <div class="headerLoginLine">
+          <a href="register.html">Register</a>
+        </div>
       </div>
-      <div class="headerLoginLine">
-        <a href="register.html">Sign Up</a>
+      <div class="stateLogin">
+        <div class="headerLoginLine border-b">
+          <span class="headerUserName"></span>
+        </div>
+        <div class="headerLoginLine border-b">
+          <a href="personalInformation.html" target="_blank">Personal Data</a>
+        </div>
+        <div class="headerLoginLine border-b">
+          <a href="personalInformation.html" target="_blank">Collection</a>
+        </div>
+        <div class="headerLoginLine">
+          <span class="headerSignUpBtn">Log Out</span>
+        </div>
       </div>
     </div>
   </div>

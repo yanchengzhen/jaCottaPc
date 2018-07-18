@@ -2,27 +2,24 @@ $(document).ready(function () {
     var vm = new Vue({
         el: '#main',
         data: {
+            userName:"",
             email:"",
-            password:"",
+            phone:"",
             loading:false,
-            forgetPwdEmail:"",
         },
         methods:{
-            login:function(){
+            editUser:function(){
                 if(vm.loading){return}
+                if(!vm.userName){toastr.error("userName is required!");return}
                 if(!vm.email){toastr.error("email is required!");return}
                 var emailRegex = /^([0-9A-Za-z\-_\.]+)@([0-9a-z]+\.[a-z]{2,3}(\.[a-z]{2})?)$/g;
                 if ( !emailRegex.test( vm.email ) ){toastr.error("Incorrect email address");return}
-                if(!vm.password){toastr.error("password is required!");return}
+                if(!vm.phone){toastr.error("phone is required!");return}
                 vm.loading = true;
-                ajax("http://192.168.1.118/jaCottaServe/login.php",{email:vm.email,password:vm.password})
+                ajax("http://192.168.1.118/jaCottaServe/editUser.php",{userName:vm.userName,email:vm.email,phone:vm.phone})
                     .then((response)=>{
                         if(response && response.advice){
-                            toastr.success("Login successful");
-                            localStorage.setItem("user",JSON.stringify(response.data));
-                            setTimeout(()=>{
-                                window.location.href="index.html";
-                            },2000);
+                            toastr.success("edit user successful");
                             vm.loading = false;
                         }else{
                             toastr.error(response.message);
@@ -34,19 +31,12 @@ $(document).ready(function () {
                         vm.loading = false;
                     })
             }
-        },
+        }
     });
-
-    /**
-     * 登录以及修改密码切换
-     */
-    $("#forget_pws").click(function (e) {
-        e.preventDefault();
-        $("#login").fadeOut(1000);
-        $("#forgetPws").fadeIn(1000);
-    });
-    $("#close").click(function () {
-        $("#forgetPws").fadeOut(1000);
-        $("#login").fadeIn(1000);
-    });
+    //判断localStorage中的用户信息是否存在，存在的话给变量赋值
+    if(localStorage.getItem("user")){
+        vm.userName = JSON.parse(localStorage.getItem("user")).userName;
+        vm.email = JSON.parse(localStorage.getItem("user")).email;
+        vm.phone = JSON.parse(localStorage.getItem("user")).phone;
+    }
 });

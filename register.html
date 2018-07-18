@@ -73,6 +73,7 @@
     </div>
     <div class="headerItem headerLogin float-r">
       <img id="headerLogin" src="image/login1.png" alt="">
+      <img id="headerLoginIn" src="image/personal.jpg" style="display: none">
     </div>
     <div class="headerItem headerSearch float-r">
       <!--搜索框-->
@@ -86,11 +87,24 @@
     <!--登录登出弹出按钮-->
     <div class="headerLoginBox" id="headerLoginBox">
       <div class="headerLoginTriangle"></div>
-      <div class="headerLoginLine border-b">
-        <a href="login.html">Sign In</a>
+      <div class="stateNotLogin">
+        <div class="headerLoginLine border-b">
+          <a href="login.html">Sign In</a>
+        </div>
       </div>
-      <div class="headerLoginLine">
-        <a href="javascript:void(0)">Sign Up</a>
+      <div class="stateLogin">
+        <div class="headerLoginLine border-b">
+          <span class="headerUserName"></span>
+        </div>
+        <div class="headerLoginLine border-b">
+          <a href="personalInformation.html" target="_blank">Personal Data</a>
+        </div>
+        <div class="headerLoginLine border-b">
+          <a href="personalInformation.html" target="_blank">Collection</a>
+        </div>
+        <div class="headerLoginLine">
+          <span class="headerSignUpBtn">Log Out</span>
+        </div>
       </div>
     </div>
   </div>

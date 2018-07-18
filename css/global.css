@@ -14,6 +14,7 @@ button,input,textarea{
 input,textarea{
     border:1px solid #d2d2d2;
 }
+input[disabled]{color:#333;opacity:1;background: #f0f5fd;}
 input:focus {
     border-color: #66afe9;
     outline: 0;
@@ -211,6 +212,7 @@ a:hover{
 .headerItem{
     height: 126px;
     line-height: 125px;
+    min-width: 50px;
     position: relative;
     text-align: center;
     font-size: 16px;
@@ -231,11 +233,16 @@ a:hover{
     transition: all 0.3s;
 }
 .headerLogin>img{
-    margin-right: 27px;
-    margin-bottom: -2px;
+    display: inline;
+    height: 19px;
+    overflow: hidden;
+    position: absolute;
+    text-align: left;
+    top: 49px;
+    left: 13px;
 }
 .headerSearch{
-    width: auto;
+    width: 40px;
     line-height: normal;
     transition: all 1s;
 }
@@ -246,18 +253,19 @@ a:hover{
     width: 28px;
     height: 30px;
     overflow: hidden;
+    position: absolute;
     text-align: left;
     padding: 8px;
-    margin-top: 46px;
+    top: 43px;
+    left: 8px;
     transition: all linear .5s;
-    margin-right: 31px;
     border-bottom-right-radius: 14px;
 }
 .headerSearchBoxShow{
     width: 300px;
     border-bottom: 1px solid #fafafa;
     position: absolute;
-    left: -330px;
+    left: -170px;
 }
 .headerSearchInput{
     float: left;
@@ -311,7 +319,6 @@ a:hover{
     position: absolute;
     top: 120px;
     right: 0;
-    width: 123px;
     opacity: 0;
     visibility: hidden;
     background-color: #fff;
@@ -335,8 +342,14 @@ a:hover{
 }
 .headerLoginLine{
     height: 35px;
+    width: 91px;
+    overflow: hidden;
     text-align: center;
     padding-top: 11px;
+    color: #333;
+}
+.headerSignUpBtn{
+    cursor: pointer;
 }
 .headerLoginLine>a{
     font-size: 16px;
