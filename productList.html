@@ -185,19 +185,19 @@
             <div class="categoryBox float-l">
                 <div class="categoryTitle">PRODUCT CATEGORIES</div>
                 <div class="categoryLine float_clear "
-                     v-for="(item,index) in productList"
+                     v-for="(item,index) in categoryList"
                      :class="{categoryLineActive:item.active}"
                      @click="changeCategory(1,index)"
                 >
-                    <span class="float-l categoryLineText">{{item.category.name}}</span>
-                    <img v-if="item.categoryChildren" class="float-r categoryLineImg" src="image/rightArrow.png" alt="">
-                    <div v-if="item.categoryChildren" class="categoryChildBox">
+                    <span class="float-l categoryLineText">{{item.categoryName}}</span>
+                    <img v-if="item.categoryChildren.length!=0" class="float-r categoryLineImg" src="image/rightArrow.png" alt="">
+                    <div v-if="item.categoryChildren.length!=0" class="categoryChildBox">
                         <div class="categoryChildLine float_clear"
                              v-for="child in item.categoryChildren"
                              :class="{categoryChildLineActive:child.active}"
                              @click.stop="changeCategory(2,index,child)"
                         >
-                            <span class="float-l categoryChildLineText">{{child.category.name}}</span>
+                            <span class="float-l categoryChildLineText">{{child.categoryName}}</span>
                         </div>
                     </div>
                 </div>

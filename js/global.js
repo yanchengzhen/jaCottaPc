@@ -128,7 +128,7 @@ function changeLoginState() {
 function ajax(url, data) {
     return new Promise(function (resolve, reject) {
         $.ajax({
-            url: url,
+            url: 'http://192.168.1.243/'+url,
             type: data == null ? 'GET' : 'POST',
             dataType: "json",
             data: data == null ? '' : data,
@@ -155,3 +155,20 @@ function ajax(url, data) {
         });
     });
 }
+
+/**
+ * 删除数组元素
+ * @param dx删除元素的下标.
+ */
+Array.prototype.remove=function(dx)
+{
+    if(isNaN(dx)||dx>this.length){return false;}
+    for(var i=0,n=0;i<this.length;i++)
+    {
+        if(this[i]!=this[dx])
+        {
+            this[n++]=this[i]
+        }
+    }
+    this.length-=1
+};

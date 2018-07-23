@@ -25,7 +25,7 @@ $(document).ready(function () {
             return
         }
         vm.loading = true;
-        ajax('js/service/collectionData.json')
+        ajax('jaCottaPc/js/service/collectionData.json')
             .then((response)=>{
                 vm.productItemList = [];
                 setTimeout(()=>{

@@ -3,7 +3,7 @@ $(document).ready(function () {
     var vm = new Vue({
         el: '#main',
         data: {
-            productList:[],
+            categoryList:[],
             categoryIndex:0,
             childCategoryOld:null,
             productItemList:[],
@@ -19,9 +19,9 @@ $(document).ready(function () {
              * @param child 第二级对象
              */
             changeCategory:function(type,index,child){
-                vm.productList[vm.categoryIndex].active = false;
+                vm.categoryList[vm.categoryIndex].active = false;
                 vm.categoryIndex = index;
-                vm.productList[index].active = true;
+                vm.categoryList[index].active = true;
                 //子元素选中状态
                 if(vm.childCategoryOld){
                     vm.childCategoryOld.active = false;
@@ -32,9 +32,9 @@ $(document).ready(function () {
                 }
                 var categoryId;
                 if(type==1){
-                    categoryId = vm.productList[vm.categoryIndex].category.id;
+                    categoryId = vm.categoryList[vm.categoryIndex].id;
                 }else{
-                    categoryId = child.category.id;
+                    categoryId = child.id;
                 }
                 //获取当前点击的数据
                 getProductList(categoryId);
@@ -52,21 +52,28 @@ $(document).ready(function () {
     /**
      * 获取产品类别
      */
-    ajax('js/service/categoryData.json')
+    ajax('jaCottaServe/categoryGetAll.php')
         .then((response)=>{
-            if(response && response.length>0){
-                response.forEach((date)=>{
-                    date.category.name = date.category.name.toUpperCase();
-                    if(date.categoryChildren){
-                        date.categoryChildren.forEach((type)=>{
-                            type.category.name = type.category.name.toUpperCase();
-                        })
+            if(response && response.data.length>0){
+                vm.categoryList = response.data;
+                for(var i=0;i<vm.categoryList.length;i++){
+                    vm.categoryList.active = false;
+                    for(var j=0;j<vm.categoryList[i].categoryChildren.length;j++){
+                        vm.categoryList[i].categoryChildren[j].active = false;
                     }
-                });
-                vm.productList = response;
-                getProductList(vm.productList[0].category.id);
+                }
+                vm.categoryList[0].active = true;
+                // getProductList(vm.categoryList[0].id);
             }
         });
+
+    /**
+     * 将分类 数据添加到相应的父元素子集中
+     * @param item
+     */
+    function findChildren(item){
+
+    }
 
     /**
      * 通过分类id获取产品数据
@@ -77,7 +84,7 @@ $(document).ready(function () {
             return
         }
         vm.loading = true;
-        ajax('js/service/productData.json')
+        ajax('jaCottaPc/js/service/productData.json')
             .then((response)=>{
                 vm.productItemList = [];
                 setTimeout(()=>{

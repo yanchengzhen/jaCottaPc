@@ -109,7 +109,7 @@ $(document).ready(function () {
      * @param id
      */
     function getManagerList(id){
-        ajax('js/service/managerData.json')
+        ajax('jaCottaPc/js/service/managerData.json')
             .then((response)=>{
                 if(response && response.length!=0){
                     if(managerId<3){

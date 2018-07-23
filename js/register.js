@@ -22,7 +22,7 @@ $(document).ready(function () {
                 if(!vm.password){toastr.error("password is required!");return}
                 if(vm.password!=vm.confirmPassWord){toastr.error("confirmPassWord entry is inconsistent!");return}
                 vm.loading = true;
-                ajax("http://192.168.1.118/jaCottaServe/register.php",
+                ajax("jaCottaServe/register.php",
                     {firstName:vm.firstName,lastName:vm.lastName,email:vm.email,phone:vm.phone,password:vm.password})
                     .then((response)=>{
                         if(response && response.advice){
