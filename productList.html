@@ -8,8 +8,9 @@
     <link rel="stylesheet" href="css/plugins/toastr.min.css">
     <link rel="stylesheet" href="css/global.css">
     <link rel="stylesheet" href="css/productList.css">
-    <script src="js/plugins/jquery-1.8.3.min.js"></script>
+    <script src="js/plugins/jquery.min.js"></script>
     <script src="js/plugins/jquery-ui-1.10.3.min.js"></script>
+    <script src="js/plugins/bootstrap.min.js"></script>
     <script src="js/plugins/swiper.min.js"></script>
     <script src="js/plugins/toastr.min.js"></script>
     <script src="js/global.js"></script>
@@ -206,26 +207,28 @@
             <div class="productItem float-l"  v-for="(item,index) in productItemList">
                 <a href="productDetails.html" target="_blank">
                     <div class="productItemImg">
-                        <img class="productPic" :src="item.pic" alt="">
+                        <img class="productPic" :src="httpUrl+item.productPic[0]" alt="">
                     </div>
-                    <div class="productName"><span>{{item.model}}</span> {{item.name}}</div>
-                    <div class="productDetails">{{item.details}}</div>
-                    <div class="productPrice">{{item.price}}</div>
+                    <div class="productName"><span>{{item.productModel}}</span> {{item.productName}}</div>
+                    <div class="productDetails">{{item.productIntroduce}}</div>
+                    <div class="productPrice">${{item.productPrice}}</div>
                 </a>
                 <img class="productItemCollect" title="Collect" :src="'image/collect'+(item.collect?'2':'1')+'.png'" @click="productCollect(item)">
             </div>
-            <!--加载中-->
-            <div class="loading float-l" v-if="loading">
-                <img src="image/loading.gif" alt="">
+            <!--正在加载动画-->
+            <div class="loading" v-if="loading">
+                <div class="bounce1">&nbsp;</div>
+                <div class="bounce2">&nbsp;</div>
+                <div class="bounce3">&nbsp;</div>
             </div>
             <!--没有数据-->
             <div class="noProduct float-l" v-if="!loading && productItemList.length==0">
                 <img src="image/noProduct.png" alt="">
                 <div class="noProductText">No related products, please look forward to</div>
             </div>
-            <!--分页-->
-            <navigation v-if="productItemList.length!=0" :pages="pages" :current.sync="pageNo" @navpage="msgListView"></navigation>
         </div>
+        <!--分页-->
+        <navigation :pages="pages" :current.sync="pageNo" @navpage="msgListView"></navigation>
     </div>
 </div>
 
@@ -316,6 +319,25 @@
     <div class="toTopPoint"></div>
     <div class="toTopPoint"></div>
     <div class="toTopPoint"></div>
+</div>
+<!--登录模态框-->
+<div id="deleteModal" class="modal fade">
+    <div class="modal-dialog" style="width: 400px;">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">提示</h4>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                        aria-hidden="true">&times;</span></button>
+            </div>
+            <div class="modal-manage">
+                <h3 class="text-center" style="line-height: 80px;">请先登录</h3>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+                <button type="button" class="btn btn-primary submit" onclick="window.location.href='login.html'">登录</button>
+            </div>
+        </div>
+    </div>
 </div>
 <script src="js/plugins/vue.min.js"></script>
 <script src="js/productList.js"></script>

@@ -119,6 +119,7 @@ function changeLoginState() {
     }
 }
 
+const httpUrl = 'http://192.168.1.243/jaCottaServe/';
 /**
  * 使用promise 重写ajax请求
  * @param url
@@ -128,7 +129,7 @@ function changeLoginState() {
 function ajax(url, data) {
     return new Promise(function (resolve, reject) {
         $.ajax({
-            url: 'http://192.168.1.243/'+url,
+            url: httpUrl+url,
             type: data == null ? 'GET' : 'POST',
             dataType: "json",
             data: data == null ? '' : data,

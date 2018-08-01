@@ -3,13 +3,14 @@ $(document).ready(function () {
     var vm = new Vue({
         el: '#main',
         data: {
-            categoryList:[],
-            categoryIndex:0,
-            childCategoryOld:null,
-            productItemList:[],
-            loading:false,
+            httpUrl: httpUrl,
+            categoryList: [],
+            categoryIndex: 0,
+            childCategoryOld: null,
+            productItemList: [],
+            loading: false,
             pageNo: 1,      //分页初始化到第几页
-            pages:8         //分页公共多少页
+            pages: 2         //分页公共多少页
         },
         methods: {
             /**
@@ -18,33 +19,53 @@ $(document).ready(function () {
              * @param index 第一级下标
              * @param child 第二级对象
              */
-            changeCategory:function(type,index,child){
+            changeCategory: function (type, index, child) {
                 vm.categoryList[vm.categoryIndex].active = false;
                 vm.categoryIndex = index;
                 vm.categoryList[index].active = true;
                 //子元素选中状态
-                if(vm.childCategoryOld){
+                if (vm.childCategoryOld) {
                     vm.childCategoryOld.active = false;
                 }
-                if(child){
+                if (child) {
                     vm.childCategoryOld = child;
                     child.active = true;
                 }
                 var categoryId;
-                if(type==1){
+                if (type == 1) {
                     categoryId = vm.categoryList[vm.categoryIndex].id;
-                }else{
+                } else {
                     categoryId = child.id;
                 }
                 //获取当前点击的数据
                 getProductList(categoryId);
+                //将分页重新赋值到第一页
+                vm.pageNo = 1;
             },
-            productCollect:function(item){
-                item.collect = !item.collect;
+            productCollect: function (item) {
+                if (!localStorage.getItem("user")) {
+                    toastr.error("请登录");
+                    $("#deleteModal").modal('show');
+                } else {
+                    if (vm.loading) {
+                        return
+                    }
+                    vm.loading = true;
+                    ajax("collectAdd.php", {uid: JSON.parse(localStorage.getItem("user")).id, pid: item.id})
+                        .then((response) => {
+                            toastr.success("collect success");
+                            item.collect = true;
+                            vm.loading = false;
+                        })
+                        .catch((err) => {
+                            vm.loading = false;
+                            toastr.error(err);
+                        });
+                }
             },
-            msgListView(curPage){
+            msgListView(curPage) {
                 //根据当前页获取数据
-
+                getProductList(vm.categoryList[vm.categoryIndex].id, curPage);
             }
         },
     });
@@ -52,54 +73,48 @@ $(document).ready(function () {
     /**
      * 获取产品类别
      */
-    ajax('jaCottaServe/categoryGetAll.php')
-        .then((response)=>{
-            if(response && response.data.length>0){
+    ajax('categoryGetAll.php')
+        .then((response) => {
+            if (response && response.data.length > 0) {
                 vm.categoryList = response.data;
-                for(var i=0;i<vm.categoryList.length;i++){
+                for (var i = 0; i < vm.categoryList.length; i++) {
                     vm.categoryList.active = false;
-                    for(var j=0;j<vm.categoryList[i].categoryChildren.length;j++){
+                    for (var j = 0; j < vm.categoryList[i].categoryChildren.length; j++) {
                         vm.categoryList[i].categoryChildren[j].active = false;
                     }
                 }
                 vm.categoryList[0].active = true;
-                // getProductList(vm.categoryList[0].id);
+                getProductList(vm.categoryList[0].id);
             }
         });
 
     /**
-     * 将分类 数据添加到相应的父元素子集中
-     * @param item
-     */
-    function findChildren(item){
-
-    }
-
-    /**
      * 通过分类id获取产品数据
-     * @param categoryId
+     * @param categoryId      分类id
+     * @param page            页数
+     * @param size            每页条数
      */
-    function getProductList(categoryId){
-        if(vm.loading){
+    function getProductList(categoryId, page = 1, size = 8) {
+        if (vm.loading) {
             return
         }
         vm.loading = true;
-        ajax('jaCottaPc/js/service/productData.json')
-            .then((response)=>{
-                vm.productItemList = [];
-                setTimeout(()=>{
-                    if(response && response.length>0){
-                        vm.loading = false;
-                        var product = response.find((date)=>{
-                            return date.categoryId == categoryId;
-                        });
-                        if(product){
-                            vm.productItemList = product.product;
-                        }else{
-                            vm.productItemList = [];
-                        }
+        vm.productItemList = [];
+        ajax("productCategoryGet.php", {id: categoryId, page: page, size: size})
+            .then((response) => {
+                if (response && response.advice) {
+                    for (var i = 0; i < response.data.length; i++) {
+                        response.data[i].collect = false;
                     }
-                },500)
+                    vm.productItemList = response.data;
+                    //总共多少页赋值
+                    vm.pages = Math.ceil(response.message / size);
+                    vm.loading = false;
+                }
+            })
+            .catch((err) => {
+                vm.loading = false;
+                toastr.error(err);
             });
     }
 
@@ -109,16 +124,16 @@ $(document).ready(function () {
         autoplay: false,
         pagination: {
             el: '.swiper-pagination',
-            clickable:true
+            clickable: true
         }
     });
 
     // 轮播进入字体效果
-    setTimeout(()=>{
+    setTimeout(() => {
         $('.section2SlideTop').addClass("section2SlideTopIn");
         $('.section2SlideTitle').addClass("section2TitleIn");
         $('.section2SlideDesBox').addClass("section2DesIn");
         $('.section2SlideBtnBox').addClass("section2BtnIn");
-    },200)
+    }, 200)
 
 });

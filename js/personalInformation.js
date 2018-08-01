@@ -16,7 +16,7 @@ $(document).ready(function () {
                 if ( !emailRegex.test( vm.email ) ){toastr.error("Incorrect email address");return}
                 if(!vm.phone){toastr.error("phone is required!");return}
                 vm.loading = true;
-                ajax("jaCottaServe/editUser.php",{id:JSON.parse(localStorage.getItem("user")).id,userName:vm.userName,email:vm.email,phone:vm.phone})
+                ajax("editUser.php",{id:JSON.parse(localStorage.getItem("user")).id,userName:vm.userName,email:vm.email,phone:vm.phone})
                     .then((response)=>{
                         if(response && response.advice){
                             toastr.success("edit user successful");

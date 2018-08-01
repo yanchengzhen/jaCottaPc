@@ -202,13 +202,6 @@
     font-family: RobotoBold;
     margin-top: 10px;
 }
-
-/*没有产品数据*/
-.loading{
-    width: 873px;
-    height: 556px;
-    text-align: center;
-}
 .noProduct{
     width: 873px;
     height: 556px;

@@ -15,7 +15,7 @@ $(document).ready(function () {
                 if ( !emailRegex.test( vm.email ) ){toastr.error("Incorrect email address");return}
                 if(!vm.password){toastr.error("password is required!");return}
                 vm.loading = true;
-                ajax("jaCottaServe/login.php",{email:vm.email,password:vm.password})
+                ajax("login.php",{email:vm.email,password:vm.password})
                     .then((response)=>{
                         if(response && response.advice){
                             toastr.success("Login successful");
